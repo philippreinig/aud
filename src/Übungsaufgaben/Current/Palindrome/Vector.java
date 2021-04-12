@@ -1,4 +1,4 @@
-// package aud;
+package Übungsaufgaben.Current.Palindrome;
 
 /**
  * Implementation of an array-based vector.
