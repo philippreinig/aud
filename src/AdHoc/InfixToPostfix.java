@@ -85,8 +85,4 @@ public class InfixToPostfix {
         }
         return output;
     }
-
-    public static void main(String[] args) {
-        System.out.println(infixToPostfix("(3+5)-3*(7+(5-3))"));
-    }
 }
