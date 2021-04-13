@@ -1,16 +1,13 @@
 package Übungsaufgaben.Current.Palindrome;
 
-import java.util.Locale;
-
-
 public class Palindrome {
     // Test if text is a palindrome.
     // Ignore upper/lower case, white space, and punctuation.
     //
 
     public static boolean isPalindrome(String text) {
-        text = text.toLowerCase(Locale.ROOT).replace(".", "").replace(",", "").replace(";", "").replace(" ", "")
-                .replace("?", "").replace("-", "").replace("!", "");
+        //    text = text.toLowerCase(Locale.ROOT).replace(".", "").replace(",", "").replace(";", "").replace(" ", "").replace("?", "").replace("-", "").replace("!", "");
+        text = text.toLowerCase().replaceAll("[^a-z0-9]", "");
         Character[] chars = text.chars().mapToObj(c -> (char) c).toArray(Character[]::new);
         int mid = (int) Math.round(chars.length / 2.0);
         Stack<Character> stackFromFront = new Stack<>();
