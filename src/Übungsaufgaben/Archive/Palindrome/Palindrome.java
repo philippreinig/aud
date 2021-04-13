@@ -1,4 +1,4 @@
-package Übungsaufgaben.Current.Palindrome;
+package Übungsaufgaben.Archive.Palindrome;
 
 public class Palindrome {
     // Test if text is a palindrome.
@@ -18,7 +18,7 @@ public class Palindrome {
         }
 
 
-        while (!stackFromFront.is_empty()) {
+        while (!stackFromFront.isEmpty()) {
             System.out.println("sfF: " + stackFromFront.toString());
             System.out.println("sfB: " + stackFromBack.toString());
             if (!stackFromFront.pop().toString().equals(stackFromBack.pop().toString())) return false;

@@ -1,4 +1,4 @@
-package Übungsaufgaben.Current.Palindrome;// package aud;
+package Übungsaufgaben.Archive.Palindrome;// package aud;
 
 // import aud.adt.AbstractStack;
 
@@ -15,7 +15,7 @@ public class Stack<T> extends AbstractStack<T> {
     }
 
     @Override
-    public boolean is_empty() {
+    public boolean isEmpty() {
         return data_.empty();
     }
 

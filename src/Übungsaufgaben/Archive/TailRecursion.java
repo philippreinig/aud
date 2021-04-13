@@ -1,4 +1,4 @@
-package Übungsaufgaben.Current;
+package Übungsaufgaben.Archive;
 
 public class TailRecursion {
 
@@ -25,8 +25,8 @@ public class TailRecursion {
     //
     private static int sumFactors(int n, int sum, int tempNum) {
         if (tempNum == n) return sum;
-        else if (n % tempNum == 0) return sumFactors(n, sum += tempNum, tempNum += 1);
-        else return sumFactors(n, sum, tempNum += 1);
+        else if (n % tempNum == 0) return sumFactors(n, sum + tempNum, tempNum + 1);
+        else return sumFactors(n, sum, tempNum + 1);
 
     }
 
