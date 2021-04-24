@@ -1,4 +1,8 @@
-package aud;
+package aud.example;
+
+import aud.BinaryTree;
+import aud.Queue;
+import aud.Stack;
 
 import java.util.Iterator;
 

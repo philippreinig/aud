@@ -1,3 +1,7 @@
+package aud;
+
+import aud.util.Graphvizable;
+
 import java.util.NoSuchElementException;
 
 /**
@@ -39,10 +43,10 @@ import java.util.NoSuchElementException;
  * utility method {@code check()}).
  */
 //@<dlist:class
-public class DList<T> implements Iterable<T>,
-        Graphvizable {
+public class DList<T> implements Iterable<T>, Graphvizable {
     Node head_ = null;
     Node tail_ = null;
+
     /**
      * create empty list
      */

@@ -1,0 +1,14 @@
+build_job:
+  stage: build
+  only:
+    - master
+  script:
+    - echo 'here'
+    - source ~/.gentoo/java-env-classpath
+    - make -C src/aud clobber all
+    - cp -r src/aud/JavaDoc ~/pubdoc/aud/doc/
+    - cp -r src/aud/Doxygen ~/pubdoc/aud/doc/
+    - cp src/aud.jar ~/pubdoc/aud/files
+    - make -C src/aud clobber
+    - git archive --format=tgz -o ~/pubdoc/aud/files/aud-public-src.tgz HEAD
+    - git archive --format=zip -o ~/pubdoc/aud/files/aud-public-src.zip HEAD
