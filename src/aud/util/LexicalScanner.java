@@ -46,6 +46,7 @@ public class LexicalScanner {
     String text_ = null;
     int id_ = NO_MATCH;
     Rule[] rules_ = null;
+
     /**
      * create new scanner processing {@code input}
      *
@@ -203,6 +204,7 @@ public class LexicalScanner {
             id_ = id;
             pattern_ = pattern;
         }
+
         /**
          * create rule ({@code pattern} is compiled)
          */

@@ -1,4 +1,4 @@
-package AdHoc;
+package adhoc;
 
 import aud.SList;
 

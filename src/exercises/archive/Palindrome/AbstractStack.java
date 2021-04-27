@@ -1,4 +1,4 @@
-package Uebungsaufgaben.Archive.Palindrome;
+package exercises.archive.Palindrome;
 
 import java.util.NoSuchElementException;
 

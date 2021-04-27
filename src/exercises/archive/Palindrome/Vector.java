@@ -1,4 +1,4 @@
-package Uebungsaufgaben.Archive.Palindrome;
+package exercises.archive.Palindrome;
 
 /**
  * Implementation of an array-based vector.

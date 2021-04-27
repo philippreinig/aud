@@ -1,4 +1,4 @@
-package Vorlesung.Lists.Vector;
+package lectures.lists.Vector;
 
 public class VectorOutOfBoundsException extends Exception {
     VectorOutOfBoundsException(int i) {

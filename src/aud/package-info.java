@@ -1,2 +1,3 @@
-/** AuD lecture: Data structures, algorithms, examples<p>
-*/
+/**
+ * AuD lecture: Data structures, algorithms, examples<p>
+ */

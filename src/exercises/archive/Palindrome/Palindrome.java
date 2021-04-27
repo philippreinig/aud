@@ -1,4 +1,4 @@
-package Uebungsaufgaben.Archive.Palindrome;
+package exercises.archive.Palindrome;
 
 public class Palindrome {
     // Test if text is a palindrome.

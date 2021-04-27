@@ -1,4 +1,4 @@
-package Uebungsaufgaben.Archive;
+package exercises.archive;
 
 public class LinkedNode<T> {
     T data = null;

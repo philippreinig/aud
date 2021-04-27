@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1587fdf0-5462-4ce1-adfd-7de184ca9a47" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/current/MyCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/current/MySList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adhoc/InfixToPostfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adhoc/InfixToPostfix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adhoc/SortList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adhoc/SortList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/SList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/SList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/adt/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/adt/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/example/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/example/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/BinaryTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/BinaryTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/DListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/DListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/RunTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/RunTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/SListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/SListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/StackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/StackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/VectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/VectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/test/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/test/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/util/LexicalScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/util/LexicalScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/util/SingleStepper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/util/SingleStepper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aud/util/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aud/util/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/IntSList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/IntSList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/LinkedNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/LinkedNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/AbstractStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/Palindrome/AbstractStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/TPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/TPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/archive/TailRecursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/archive/TailRecursion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/current/MyDList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/current/MyDList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/EmptySinglyLinkedListException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/EmptySinglyLinkedListException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/SinglyLinkedListOutofBoundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/SinglyLinkedListOutofBoundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/SinglyLinkedListTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/SinglyLinkedList/SinglyLinkedListTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/Vector/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/Vector/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/Vector/VectorOutOfBoundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/Vector/VectorOutOfBoundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/lists/Vector/VectorTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/lists/Vector/VectorTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/trees/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/trees/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/trees/BinaryTreeTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/trees/BinaryTreeTesting.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1qzLazufV7Webxc6iaGkmM4drZ0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="openjdk-15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/batik" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.splitter.proportion" value="0.19361554" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Vorlesung.Lists.SinglyLinkedList" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Development\AlgorithmenUndDatenstrukturen\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MySList">
+    <configuration name="MyCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.current.MyCircle" />
+      <module name="AlgorithmenUndDatenstrukturen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.current.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyDList (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.current.MyDList" />
+      <module name="AlgorithmenUndDatenstrukturen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.current.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyDList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.current.MyDList" />
+      <module name="AlgorithmenUndDatenstrukturen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.current.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.current.MySList" />
+      <module name="AlgorithmenUndDatenstrukturen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.current.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Standard" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="lectures.trees.BinaryTreeTesting" />
+      <module name="AlgorithmenUndDatenstrukturen" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="AlgorithmenUndDatenstrukturen" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Standard" />
+      <item itemvalue="Application.MyDList" />
+      <item itemvalue="Application.MyDList (1)" />
+      <item itemvalue="Application.MyCircle" />
+      <item itemvalue="Application.MySList" />
+      <item itemvalue="Application.Test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MySList" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.MyCircle" />
+        <item itemvalue="Application.MyDList" />
+        <item itemvalue="Application.MyDList (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1587fdf0-5462-4ce1-adfd-7de184ca9a47" name="Default Changelist" comment="" />
+      <created>1618077539238</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618077539238</updated>
+      <workItem from="1618077540369" duration="10727000" />
+      <workItem from="1618131367918" duration="1238000" />
+      <workItem from="1618132677475" duration="10357000" />
+      <workItem from="1618388279893" duration="55000" />
+      <workItem from="1618388354543" duration="53000" />
+      <workItem from="1618520790440" duration="11000" />
+      <workItem from="1618520953194" duration="1188000" />
+      <workItem from="1618690686346" duration="2580000" />
+      <workItem from="1618733193230" duration="5383000" />
+      <workItem from="1618897006710" duration="4589000" />
+      <workItem from="1619080529894" duration="2636000" />
+      <workItem from="1619094471368" duration="627000" />
+      <workItem from="1619171681488" duration="3992000" />
+      <workItem from="1619256283508" duration="9665000" />
+      <workItem from="1619274976597" duration="19000" />
+      <workItem from="1619275029478" duration="99000" />
+      <workItem from="1619275143898" duration="2250000" />
+      <workItem from="1619278239637" duration="2728000" />
+      <workItem from="1619285960560" duration="18414000" />
+      <workItem from="1619501280320" duration="378000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.configurationType" implementationName="GradleRunConfiguration" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="65" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="64" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="Vorlesung.Lists.Vector.VectorOutOfBoundsException" package="Vorlesung.Lists.Vector" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/archive/IntSList.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/archive/LinkedNode.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/lectures/trees/BinaryTreeTesting.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/current/MyCircle.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AlgorithmenUndDatenstrukturen$MyDList.ic" NAME="MyDList Coverage Results" MODIFIED="1619277623767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Uebungsaufgaben.Current.*</FILTER>
+    </SUITE>
+  </component>
+</project>

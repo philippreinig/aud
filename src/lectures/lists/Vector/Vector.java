@@ -1,4 +1,4 @@
-package Vorlesung.Lists.Vector;
+package lectures.lists.Vector;
 
 public class Vector<T> {
     private final int MIN_SIZE = 16;

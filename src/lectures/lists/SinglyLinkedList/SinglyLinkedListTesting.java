@@ -1,4 +1,4 @@
-package Vorlesung.Lists.SinglyLinkedList;
+package lectures.lists.SinglyLinkedList;
 
 public class SinglyLinkedListTesting {
     public static void main(String[] args) {

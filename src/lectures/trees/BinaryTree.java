@@ -1,4 +1,4 @@
-package Vorlesung.Trees;
+package lectures.trees;
 
 import aud.Stack;
 

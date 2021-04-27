@@ -1,11 +1,7 @@
 package aud.util;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -40,10 +36,10 @@ import java.awt.event.WindowEvent;
  * <p>
  * {@link DotViewer} can be used to visualize the state of an
  * algorithm that is run with {@code SingleStepper}. {@link
- * GraphDemo} shows an example.
+ * GraphVizDemo} shows an example.
  *
  * @see DotViewer
- * @see GraphDemo
+ * @see GraphVizDemo
  */
 public class SingleStepper {
 
@@ -63,6 +59,7 @@ public class SingleStepper {
             try {
                 timeout = Integer.parseInt(Sys.env("AUD_TIMEOUT"));
             } catch (NumberFormatException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -121,23 +118,15 @@ public class SingleStepper {
 
         next = new JButton("continue");
 
-        next.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                onNext();
-            }
-        });
+        next.addActionListener(ae -> onNext());
 
-        spinner.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent arg0) {
-                // TODO Auto-generated method stub
-                if ((int) spinner.getValue() < 10)
-                    spinner.setValue(10);
-                if ((int) spinner.getValue() > 40)
-                    spinner.setValue(40);
+        spinner.addChangeListener(arg0 -> {
+            if ((int) spinner.getValue() < 10)
+                spinner.setValue(10);
+            if ((int) spinner.getValue() > 40)
+                spinner.setValue(40);
 
-                history.setFont(new Font("", Font.BOLD, (int) spinner.getValue()));
-            }
+            history.setFont(new Font("", Font.BOLD, (int) spinner.getValue()));
         });
 
         panel.add("North", spinner);
@@ -172,7 +161,7 @@ public class SingleStepper {
             }
 
         } catch (InterruptedException e) {
-            System.err.println(e);
+            e.printStackTrace();
             history.append("--- interrupted ---\n");
         } catch (IllegalMonitorStateException e) {
             System.err.println("ERROR: " + e);

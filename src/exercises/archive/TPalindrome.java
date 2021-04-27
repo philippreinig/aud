@@ -1,4 +1,4 @@
-package Uebungsaufgaben.Archive;
+package exercises.archive;
 
 import aud.Stack;
 

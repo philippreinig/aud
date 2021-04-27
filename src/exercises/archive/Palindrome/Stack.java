@@ -1,4 +1,4 @@
-package Uebungsaufgaben.Archive.Palindrome;// package aud;
+package exercises.archive.Palindrome;// package aud;
 
 // import aud.adt.AbstractStack;
 
