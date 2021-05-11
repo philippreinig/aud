@@ -50,8 +50,7 @@ public class Tokenizer extends LexicalScanner {
      */
     public static void main(String[] args) {
 
-        Tokenizer t = new Tokenizer
-                (args.length == 0 ? "2*(3+4)/x-3.14+2^3-2**3" : args[0]);
+        Tokenizer t = new Tokenizer(args.length == 0 ? "2*(3+4)/x-3.14+2^3-2**3" : args[0]);
 
         System.out.println("input = '" + t.remainder() + "'");
 

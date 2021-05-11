@@ -14,8 +14,7 @@ public class Minus extends Operator {
     public double getValue() {
         ExpressionTree left = (ExpressionTree) node_.getLeft();
         ExpressionTree right = (ExpressionTree) node_.getRight();
-        return
-                left.getData().getValue() - right.getData().getValue();
+        return left.getData().getValue() - right.getData().getValue();
     }
 
     @Override

@@ -28,7 +28,7 @@ import aud.util.Sys;
  * </code></pre>
  * <p>
  * {@code <number>} and {@code <symbol>} are identified during the
- * lexcical analysis. They correspond to {@link AtomicExpression}
+ * lexical analysis. They correspond to {@link AtomicExpression}
  * instances, which are used to build the tree. The same applies to
  * operators {@code '+'},...<p>
  * <p>
@@ -87,7 +87,7 @@ public class ExpressionParser {
      * parse input
      *
      * @param input term
-     * @return extression tree that represents input term
+     * @return expression tree that represents input term
      * @throws SyntaxError on syntax error
      */
     public ExpressionTree parse(String input) {

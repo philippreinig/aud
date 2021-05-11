@@ -1,5 +1,9 @@
 *.class
-*.jar
 *~
 .#\*
 \#*#
+.idea/
+aud.iml
+lib/temp/
+out/
+
