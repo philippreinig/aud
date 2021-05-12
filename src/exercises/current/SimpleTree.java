@@ -4,36 +4,149 @@ package exercises.current;
 public class SimpleTree<T extends Comparable<T>> {
     //---------------------------------------------------------------//
     public class Node {
-        // TODO: implement node class
+        T data;
+        Node right;
+        Node left;
+
+        Node(T data){
+            this(data, null, null);
+        }
+
+        Node(T data, Node left, Node right){
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
+
+        public boolean isLeaf(){
+            return this.right == null && this.left == null;
+        }
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        @Override
+        public String toString(){
+            return toString(this);
+
+        }
+
+        private String toString(Node node){
+            String str = "";
+            str += node.left != null ? node.left.toString() : "";
+            str += node.data.toString() + " ";
+            str += node.right != null ? node.right.toString() : "";
+             return str;
+        }
+
+        public String toStringDetailed(){
+            return toStringDetailed(this);
+        }
+
+        private String toStringDetailed(Node node){
+            String str = "";
+            str += node.left != null ? node.left.toString() : "";
+            str += node.data.toString() +
+                    "[" +
+                    (node.left != null ? node.left.data.toString() : "null") +
+                    "," +
+                    (node.right != null ? node.right.data.toString() : "null") +
+                    "]" +  " ";
+            str += node.right != null ? node.right.toString() : "";
+            return str;
+        }
     }
 
     //---------------------------------------------------------------//
-    private Node root_;
+    private Node root;
 
     //---------------------------------------------------------------//
     public SimpleTree() {
-        // TODO: implementation
     }
 
     //---------------------------------------------------------------//
-    public void add(T obj) {
-        // TODO: implementation
+    public void add(T data) {
+        if (root == null) root = new Node(data);
+        else{
+            Node node = this.root;
+            while (node != null){
+                if (data.compareTo(node.data) == 0){
+                    System.out.println(data.toString() + " already contained in tree");
+                    return;
+                }
+                else if (data.compareTo(node.data) < 0){
+                    if (node.left == null) break;
+                    else node = node.left;
+                }
+                else{
+                    if (node.right == null) break;
+                    else node = node.right;
+                }
+            }
+             if (node.data.compareTo(data) < 0){
+                node.setRight(new Node(data));
+            }else{
+                node.setLeft(new Node(data));
+            }
+        }
     }
 
     //---------------------------------------------------------------//
-    public boolean contains(T obj) {
+    public boolean contains(T data) {
+        Node node = this.root;
+        while (node != null){
+            if (data.compareTo(node.data) == 0) return true;
+            else if (data.compareTo(node.data) < 0) node = node.left;
+            else node = node.right;
+        }
         return false;
-        // TODO: implementation
     }
 
     //---------------------------------------------------------------//
+    @Override
     public String toString() {
-        return "";
-        // TODO: implementation
+        return toString("");
+    }
+
+    private String toString(String str){
+        return root != null ? root.toString() : "";
     }
 
     //---------------------------------------------------------------//
     public static void main(String[] args) {
-        // TODO: test your code with appropriate examples
+        SimpleTree<Integer> tree = new SimpleTree<Integer>();
+        tree.add(4);
+        System.out.println(tree.toString());
+        tree.add(2);
+        System.out.println(tree.toString());
+        tree.add(4);
+        System.out.println(tree.toString());
+        tree.add(6);
+        System.out.println(tree.toString());
+        tree.add(10);
+        System.out.println(tree.toString());
+        tree.add(12);
+        System.out.println(tree.toString());
+        tree.add(7);
+        System.out.println(tree.toString());
+
+        assert(tree.contains(4));
+        assert(tree.contains(6));
+        assert(tree.contains(7));
+        assert(!tree.contains(-1));
+        System.out.println("tree inorder: " + tree.toString());
     }
 }

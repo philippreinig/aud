@@ -1,1 +1,7 @@
-.idea/misc.xml
+*.class
+*~
+.#\*
+\#*#
+.idea/
+aud.iml
+out/
