@@ -1,4 +1,7 @@
 package aud.example.expr;
+
+import aud.util.DotViewer;
+
 /** ExpressionTree: minimal example */
 public class ExpressionTreeExample {
 
@@ -13,5 +16,6 @@ public class ExpressionTreeExample {
       ); // (2+3)*5
     System.out.println(tree);
     System.out.println(tree.getValue());
+    DotViewer.displayWindow(tree.toDot(), "ExpressionTreeExample");
   }
 }

@@ -85,7 +85,7 @@ public class BinarySearchTreeTest {
     }
   }
 
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     org.junit.runner.JUnitCore.main("aud.test.BinarySearchTreeTest");
   }
 }
