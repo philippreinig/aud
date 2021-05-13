@@ -47,13 +47,12 @@ public class ExpressionParser2 extends ExpressionParser {
               sum  '+' product | sum '-' product
       </code></pre>
    */
-  @Override
-  protected ExpressionTree sum(int level) {
+  @Override protected ExpressionTree sum(int level) {
     verbose(level,"<sum>");
 
     // temporary storage
-    Queue<ExpressionTree> expr = new Queue<>();
-    Queue<Integer>        op   = new Queue<>();
+    Queue<ExpressionTree> expr = new Queue<ExpressionTree>();
+    Queue<Integer>        op   = new Queue<Integer>();
 
     ExpressionTree tree=product(level+1);
 
@@ -84,8 +83,8 @@ public class ExpressionParser2 extends ExpressionParser {
     verbose(level,"<product>");
 
     // temporary storage
-    Queue<ExpressionTree> expr = new Queue<>();
-    Queue<Integer>        op   = new Queue<>();
+    Queue<ExpressionTree> expr = new Queue<ExpressionTree>();
+    Queue<Integer>        op   = new Queue<Integer>();
 
     ExpressionTree tree=factor(level+1);
 

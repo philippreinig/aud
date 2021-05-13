@@ -1,6 +1,6 @@
 package aud.example.expr;
 
-/** Node representing a symbolic parameter, e.g., a varibale.
+/** Node representing a symbolic parameter, e.g., a variable.
     @see ExpressionTree
  */
 public class Symbol extends Terminal {

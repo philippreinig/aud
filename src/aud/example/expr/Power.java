@@ -1,34 +1,19 @@
 package aud.example.expr;
 
-/**
- * binary power operator: A^B (also A**B)
- */
+import java.lang.Math;
+
+/** binary power operator: A^B (also A**B) */
 public class Power extends Operator {
-    /**
-     * create operation
-     */
-    public Power() {
-    }
+  /** create operation */
+  public Power() {}
 
-    @Override
-    public double getValue() {
-        ExpressionTree left = (ExpressionTree) node_.getLeft();
-        ExpressionTree right = (ExpressionTree) node_.getRight();
-        return Math.pow(left.getData().getValue(), right.getData().getValue());
-    }
-
-    @Override
-    public Type getType() {
-        return Type.OpPower;
-    }
-
-    @Override
-    public Power clone() {
-        return new Power();
-    }
-
-    @Override
-    public String toString() {
-        return "**";
-    }
+  @Override public double getValue() {
+    ExpressionTree left =(ExpressionTree) node_.getLeft();
+    ExpressionTree right=(ExpressionTree) node_.getRight();
+    return
+      Math.pow(left.getData().getValue(),right.getData().getValue());
+  }
+  @Override public Type getType() { return Type.OpPower; }
+  @Override public Power clone() { return new Power(); }
+  @Override public String toString() { return "**"; }
 }
