@@ -65,9 +65,7 @@ public class BinaryTree<T> {
 
     public BinaryTree<T> getRoot() {
         BinaryTree<T> node = this;
-        while (node.getParent() != null) {
-            node = node.getParent();
-        }
+        while (node.getParent() != null) node = node.getParent();
         return node;
     }
 
@@ -94,9 +92,7 @@ public class BinaryTree<T> {
         while (node != null) {
             while (node != null) {
                 System.out.print(node.getData() + " ");
-                if (node.getRightChild() != null) {
-                    stack.push(node.getRightChild());
-                }
+                if (node.getRightChild() != null) stack.push(node.getRightChild());
                 node = node.getLeftChild();
             }
             node = stack.is_empty() ? null : stack.pop();

@@ -1,4 +1,4 @@
-package exercises.current;
+package exercises.archive;
 
 /**
  * MySList represents a single linked list, which holds elements of type

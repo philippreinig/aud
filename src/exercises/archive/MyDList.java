@@ -1,4 +1,4 @@
-package exercises.current;
+package exercises.archive;
 
 import aud.DList;
 import aud.Queue;
@@ -8,6 +8,32 @@ public class MyDList<T> extends DList<T> {
 
     public MyDList() {
         super();
+    }
+
+    // O(n) = n
+    public void append(MyDList<T> li) {
+        Queue<T> queue = new Queue<>();
+        for (T t : li) queue.enqueue(t);
+        T next = queue.dequeue();
+        while (!queue.is_empty()) {
+            this.push_back(next);
+            next = queue.dequeue();
+        }
+        this.push_back(next);
+    }
+
+    // O(n) = n
+    public void insert(int n, MyDList<T> li) {
+        if (n < 0 || n >= this.size()) throw new IndexOutOfBoundsException();
+        Queue<T> queue = new Queue<>();
+        for (T t : li) queue.enqueue(t);
+        T next = queue.dequeue();
+        int i;
+        for (i = 0; !queue.is_empty(); i++) {
+            super.insert(n + i, next);
+            next = queue.dequeue();
+        }
+        super.insert(i + n, next);
     }
 
     public static void main(String[] args) {
@@ -28,35 +54,5 @@ public class MyDList<T> extends DList<T> {
 //        mydl1.append(mydl1);
 //        System.out.println(mydl1);
     }
-
-    // O(n) = n
-    public void append(MyDList<T> li) {
-        Queue<T> queue = new Queue<>();
-        for (T t : li) {
-            queue.enqueue(t);
-        }
-        T next = queue.dequeue();
-        while(!queue.is_empty()){
-            this.push_back(next);
-            next = queue.dequeue();
-        }
-        this.push_back(next);
-    }
-
-    // O(n) = n
-    public void insert(int n, MyDList<T> li) {
-        if (n < 0 || n >= this.size()) throw new IndexOutOfBoundsException();
-        Queue<T> queue = new Queue<>();
-        for (T t : li) {
-            queue.enqueue(t);
-        }
-        T next = queue.dequeue();
-        int i;
-        for (i = 0; !queue.is_empty(); i++) {
-            super.insert(n+i, next);
-            next = queue.dequeue();
-        }
-        super.insert(i + n, next);
-    }
-    }
+}
 

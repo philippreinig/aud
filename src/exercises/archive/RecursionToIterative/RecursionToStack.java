@@ -1,4 +1,4 @@
-package exercises.current.RecursionToIterative;
+package exercises.archive.RecursionToIterative;
 
 import aud.Stack;
 

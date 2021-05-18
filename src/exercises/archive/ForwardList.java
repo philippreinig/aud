@@ -1,4 +1,4 @@
-package exercises.current;
+package exercises.archive;
 
 import aud.Stack;
 

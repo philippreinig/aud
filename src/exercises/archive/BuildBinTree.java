@@ -1,4 +1,4 @@
-package exercises.current;
+package exercises.archive;
 
 import aud.BinaryTree;
 import aud.Queue;
