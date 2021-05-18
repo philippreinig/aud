@@ -10,9 +10,6 @@ import aud.util.*;
 public class ExprWithPow extends ExpressionParser2{
     /**
      * <product> ::= <power> | <power> "*" <product> | <power> "/" <product>
-     *
-     *
-     *
      * <factor> ::= <number> | <symbol> | "-" <factor> | "+" <factor> | "(" * <expression> ")"
      */
     @Override
