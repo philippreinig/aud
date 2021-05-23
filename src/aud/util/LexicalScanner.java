@@ -46,10 +46,10 @@ public class LexicalScanner {
     Pattern pattern_;
   }
 
-  String input_;
-  String text_;
+  String input_ = null;
+  String text_  = null;
   int    id_    = NO_MATCH;
-  Rule[] rules_;
+  Rule[] rules_ = null;
 
   /** white space */
   public static final Pattern P_WHITESPACE = Pattern.compile("\\s+");

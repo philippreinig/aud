@@ -7,7 +7,7 @@ public abstract class AtomicExpression {
   /** uplink reference to node: {@code node_.getData()==this} <p>
 
       Set by constructor of {@link ExpressionTree}. <em>This is not
-      good style but allows for reusing {@link aud.BinaryTree} as
+      good style but alllows for reusing {@link aud.BinaryTree} as
       is.</em>
    */
   protected ExpressionTree node_ = null;
@@ -31,7 +31,7 @@ public abstract class AtomicExpression {
     //
     // The implementation that throws an exception frees us from
     // defining clone(), e.g., in the new Power class (expect less
-    // surprises.)
+    // suprises.)
     //
     // Similarly, AtomicExpression should better implement
     // Cloneable; but then we always had to take care of possible

@@ -4,7 +4,7 @@ import aud.util.*;
 import aud.Queue;
 
 /** example: visualize expression tree traversal */
-public class  ExpressionTreeTraversal extends SingleStepper {
+public class ExpressionTreeTraversal extends SingleStepper {
 
   protected ExpressionTree  tree_   = null;
   protected DotViewer       viewer_ = DotViewer.displayWindow

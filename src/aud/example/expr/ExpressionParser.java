@@ -28,7 +28,7 @@ import aud.util.Sys;
     </code></pre>
 
     {@code <number>} and {@code <symbol>} are identified during the
-    lexical analysis. They correspond to {@link AtomicExpression}
+    lexcical analysis. They correspond to {@link AtomicExpression}
     instances, which are used to build the tree. The same applies to
     operators {@code '+'},...<p>
 

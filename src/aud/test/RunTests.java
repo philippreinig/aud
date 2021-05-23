@@ -12,13 +12,11 @@ import org.junit.runners.*;
       QueueTest.class,
       BinaryTreeTest.class,
       BinarySearchTreeTest.class,
-      //AVLTreeTest.class,
-      //A234TreeTest.class,
-      //RedBlackTreeTest.class,
-      //BTreeTest.class,
-      //SparseMatrixCSTest.class,
-      //AdjacencyMatrixTest.class,
-      //GraphTest.class
+      AVLTreeTest.class,
+      A234TreeTest.class,
+      RedBlackTreeTest.class,
+      BTreeTest.class,
+      SparseMatrixCSTest.class,
     }
 )
 public class RunTests {

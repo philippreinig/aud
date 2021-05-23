@@ -1,9 +1,2 @@
-*.class
-*~
-.#\*
-\#*#
-.idea/
-aud.iml
-lib/temp/
-out/
-
+JavaDoc
+Doxygen

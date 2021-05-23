@@ -12,7 +12,7 @@ import aud.util.SimpleDecorator;
     @see AtomicExpression
  */
 public class ExpressionTree extends BinaryTree<AtomicExpression> {
-  /** create and link tree node */
+  /** creare and link tree node */
   public ExpressionTree(AtomicExpression atom,
                         ExpressionTree left,ExpressionTree right) {
     super(atom,left,right);

@@ -27,17 +27,17 @@ public class Tokenizer extends LexicalScanner {
   public static final int IDENTIFIER=0x100;
   public static final int NUMBER=0x101;
 
-  protected static final Rule[] RULES =
+  protected static final LexicalScanner.Rule[] RULES =
   {
-    new Rule(PLUS,  P_PLUS),
-    new Rule(MINUS, P_MINUS),
-    new Rule(POWER, P_POWER), // test '**' before '*' !
-    new Rule(TIMES, P_TIMES),
-    new Rule(DIVIDE,P_DIVIDE),
-    new Rule(LEFT_PAREN,P_LEFTPAREN),
-    new Rule(RIGHT_PAREN,P_RIGHTPAREN),
-    new Rule(NUMBER,LexicalScanner.P_FLOAT),
-    new Rule(IDENTIFIER,LexicalScanner.P_IDENTIFIER)
+    new LexicalScanner.Rule(PLUS,  P_PLUS),
+    new LexicalScanner.Rule(MINUS, P_MINUS),
+    new LexicalScanner.Rule(POWER, P_POWER), // test '**' before '*' !
+    new LexicalScanner.Rule(TIMES, P_TIMES),
+    new LexicalScanner.Rule(DIVIDE,P_DIVIDE),
+    new LexicalScanner.Rule(LEFT_PAREN,P_LEFTPAREN),
+    new LexicalScanner.Rule(RIGHT_PAREN,P_RIGHTPAREN),
+    new LexicalScanner.Rule(NUMBER,LexicalScanner.P_FLOAT),
+    new LexicalScanner.Rule(IDENTIFIER,LexicalScanner.P_IDENTIFIER)
   };
 
   /** create new tokenizer for {@code input} */

@@ -38,11 +38,11 @@ import org.w3c.dom.svg.SVGDocument;
     </ul>
 
     {@code DotViewer} can be used with {@link SingleStepper} to
-    visualize progress of an algorithm. {@link GraphVizDemo} shows an
+    visualize progress of an algorithm. {@link GraphDemo} shows an
     example.
 
     @see SingleStepper
-    @see GraphVizDemo
+    @see GraphDemo
  */
 public class DotViewer {
 
