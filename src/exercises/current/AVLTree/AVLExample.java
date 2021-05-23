@@ -40,40 +40,5 @@ public class AVLExample {
         ss.halt();
         avlTree.insert(16, 16);
         dv.display(avlTree);
-
-
-        /*
-        AVLTree<Integer, String> test = new AVLTree<Integer, String>();
-	  	SingleStepper stepper = new SingleStepper("hi");
-	  	DotViewer v = DotViewer.displayWindow(test, "Dot Viewer");
-
-		 stepper.halt();
-		 test.insert(14, "a");
-		 v.display(test);
-
-		 stepper.halt();
-		 test.insert(15, "b");
-		 v.display(test);
-
-		 stepper.halt();
-		 test.insert(17, "c");
-		 v.display(test);
-
-		 stepper.halt();
-		 test.insert(7, "d");
-		 v.display(test);
-
-		 stepper.halt();
-		 test.insert(5, "e");
-		 v.display(test);
-
-		 stepper.halt();
-		 test.insert(10, "f");
-		 v.display(test);
-
-		 stepper.halt();
-		 test.insert(16, "g");
-		 v.display(test);
-         */
     }
 }
