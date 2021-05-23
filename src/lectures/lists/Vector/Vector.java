@@ -19,8 +19,7 @@ public class Vector<T> {
     }
 
     public boolean isValidIndex(int i) {
-        if (i < 0 || i > size - 1) return false;
-        else return true;
+        return i >= 0 && i <= size - 1;
     }
 
     public T at(int i) throws VectorOutOfBoundsException {

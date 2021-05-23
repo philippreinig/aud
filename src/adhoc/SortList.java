@@ -3,7 +3,7 @@ package adhoc;
 import aud.SList;
 
 public class SortList<T extends Comparable<T>> {
-    private SList<T> list = new SList<>();
+    private final SList<T> list = new SList<>();
 
     public SortList() {
     }
@@ -13,11 +13,11 @@ public class SortList<T extends Comparable<T>> {
         sl.insert(2);
         sl.insert(3);
         sl.insert(1);
-        System.out.println(sl.toString());
+        System.out.println(sl);
         sl.insert(4);
         sl.insert(0);
         System.out.println(sl.insert(2));
-        System.out.println(sl.toString());
+        System.out.println(sl);
     }
 
     public boolean insert(T obj) {

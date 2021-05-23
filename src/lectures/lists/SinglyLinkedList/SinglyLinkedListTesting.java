@@ -3,7 +3,7 @@ package lectures.lists.SinglyLinkedList;
 public class SinglyLinkedListTesting {
     public static void main(String[] args) {
         SinglyLinkedList<String> sll = new SinglyLinkedList<>();
-        System.out.println(sll.toString());
+        System.out.println(sll);
 
         try {
             sll.insertAt(sll.size(), "string_1");
@@ -12,6 +12,6 @@ public class SinglyLinkedListTesting {
         } catch (SinglyLinkedListOutofBoundsException e) {
             e.printStackTrace();
         }
-        System.out.println(sll.toString());
+        System.out.println(sll);
     }
 }

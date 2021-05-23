@@ -1,3 +1,4 @@
-/** graph data structures and algorithms
-*/
+/**
+ * graph data structures and algorithms
+ */
 package aud.graph;

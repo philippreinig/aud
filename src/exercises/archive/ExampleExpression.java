@@ -1,4 +1,4 @@
-package exercises.current;
+package exercises.archive;
 
 import aud.example.expr.*;
 import aud.example.expr.Number;

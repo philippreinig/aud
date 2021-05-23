@@ -18,20 +18,20 @@ public class LinkedNode<T> {
         tuesday.setNextNode(thursday);
         LinkedNode<String> friday = new LinkedNode<>("friday", null);
         thursday.setNextNode(friday);
-        System.out.println(monday.toString());
-        System.out.println(tuesday.toString());
-        System.out.println(thursday.toString());
-        System.out.println(friday.toString());
+        System.out.println(monday);
+        System.out.println(tuesday);
+        System.out.println(thursday);
+        System.out.println(friday);
 
         System.out.println("-----------------------------------------");
         LinkedNode<String> wednesday = new LinkedNode<>("wednesday", thursday);
         tuesday.setNextNode(wednesday);
 
-        System.out.println(monday.toString());
-        System.out.println(tuesday.toString());
-        System.out.println(wednesday.toString());
-        System.out.println(thursday.toString());
-        System.out.println(friday.toString());
+        System.out.println(monday);
+        System.out.println(tuesday);
+        System.out.println(wednesday);
+        System.out.println(thursday);
+        System.out.println(friday);
 
 //        LinkedNode<Character> ln1 = new LinkedNode<>('a', null);
 //        ln1.setNextNode(new LinkedNode<Character>('b', null));

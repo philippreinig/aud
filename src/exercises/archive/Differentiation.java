@@ -1,9 +1,9 @@
-package exercises.current;
+package exercises.archive;
 
 import aud.BinaryTree;
 import aud.BinaryTreeTraversal;
-import aud.example.expr.*;
 import aud.example.expr.Number;
+import aud.example.expr.*;
 import aud.util.DotViewer;
 
 public class Differentiation {
@@ -13,6 +13,7 @@ public class Differentiation {
     private static final AtomicExpression.Type TIMES = AtomicExpression.Type.OpTimes;
     private static final AtomicExpression.Type SYMBOL = AtomicExpression.Type.TSymbol;
     private static final AtomicExpression.Type TNUMBER = AtomicExpression.Type.TNumber;
+
     //----------------------------------------------------------------//
     //----------------------------------------------------------------//
     public static ExpressionTree differentiate(BinaryTree<AtomicExpression> tree, String var) {
@@ -22,33 +23,31 @@ public class Differentiation {
         if (type == SYMBOL) {
             if (tree.getData().toString().equals(var)) expTree.setData(new Number(1));
             else expTree.setData(new Number(0));
-        }else if (type == PLUS){
+        } else if (type == PLUS) {
             expTree = new ExpressionTree(tree.getData().clone(), differentiate(tree.getLeft(), var), differentiate(tree.getRight(), var));
-        }else if (type == TIMES){
+        } else if (type == TIMES) {
             expTree.setData(new Plus());
             expTree.setLeft(new ExpressionTree(new Times(), differentiate(tree.getLeft(), var), (ExpressionTree) tree.getRight()));
             expTree.setRight(new ExpressionTree(new Times(), (ExpressionTree) tree.getLeft(), differentiate(tree.getRight(), var)));
-        }else if (type == UNARY_MINUS){
-            if (tree.getLeft() == null){
+        } else if (type == UNARY_MINUS) {
+            if (tree.getLeft() == null) {
                 throw new RuntimeException();
-            }else{
-                if (tree.getLeft().getData().toString().equals(var)){
+            } else {
+                if (tree.getLeft().getData().toString().equals(var)) {
                     expTree.setData(new UnaryMinus());
                     expTree.setLeft(new ExpressionTree(new Number(1)));
-                }
-                else{
+                } else {
                     expTree.setData(new UnaryMinus());
                     expTree.setLeft(differentiate(tree.getLeft(), var));
                 }
             }
-        }else if (type == MINUS){
+        } else if (type == MINUS) {
             expTree = new ExpressionTree(tree.getData().clone(), differentiate(tree.getLeft(), var), differentiate(tree.getRight(), var));
-        }else if (type == TNUMBER){
+        } else if (type == TNUMBER) {
             if (treeContainsVar(tree, var)) expTree.setData(tree.getData().clone());
             else expTree.setData(new Number(0));
 
-        }
-        else{
+        } else {
             System.err.println("Not handled: " + type + ": " + tree.getData());
         }
 
@@ -56,9 +55,9 @@ public class Differentiation {
 
     }
 
-    private static boolean treeContainsVar (BinaryTree<AtomicExpression> tree, String var){
+    private static boolean treeContainsVar(BinaryTree<AtomicExpression> tree, String var) {
         BinaryTreeTraversal<AtomicExpression>.Inorder traverser = tree.inorder();
-        for(BinaryTree<AtomicExpression> node : traverser){
+        for (BinaryTree<AtomicExpression> node : traverser) {
             if (node.getData().toString().equals(var)) return true;
         }
         return false;
@@ -70,12 +69,12 @@ public class Differentiation {
 
         BinaryTreeTraversal<AtomicExpression>.Inorder traverser = tree.inorder();
 
-        for (BinaryTree<AtomicExpression> node : traverser){
+        for (BinaryTree<AtomicExpression> node : traverser) {
             System.out.println(node.getData().getType().toString());
         }
 
-        DotViewer.displayWindow(tree.toDot() , "Tree");
-        DotViewer.displayWindow(differentiate(tree, "x").toDot() , "Differentiated Tree");
+        DotViewer.displayWindow(tree.toDot(), "Tree");
+        DotViewer.displayWindow(differentiate(tree, "x").toDot(), "Differentiated Tree");
 
 //        String expected = "((-1)*y)+((-x)*0)";
 //        String is_actually =  "(-1*y)+((-x)*0)";

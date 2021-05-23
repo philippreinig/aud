@@ -2,125 +2,125 @@ package aud.test;
 
 import aud.Vector;
 import aud.graph.matrix.SparseMatrix;
+import org.junit.Test;
 
-import org.junit.*;
 import static org.junit.Assert.*;
 
 public class SparseMatrixTest {
 
-  @Test
-  public void testMatrix() {
-    SparseMatrix<Integer> m=new SparseMatrix<Integer>();
-    assertFalse(m.isSymmetricMatrix());
+    public static void main(String[] args) {
+        org.junit.runner.JUnitCore.main("aud.test.SparseMatrixTest");
+    }
 
-    assertSame(m.nnz(),0);
-    assertSame(m.getNumRows(),0);
-    assertSame(m.getNumColumns(),0);
-    assertSame(m.getMinRowIndex(),0);
-    assertSame(m.getMinColumnIndex(),0);
+    @Test
+    public void testMatrix() {
+        SparseMatrix<Integer> m = new SparseMatrix<Integer>();
+        assertFalse(m.isSymmetricMatrix());
 
-    m.set(2,2,2);
-    m.set(9,9,9);
+        assertSame(m.nnz(), 0);
+        assertSame(m.getNumRows(), 0);
+        assertSame(m.getNumColumns(), 0);
+        assertSame(m.getMinRowIndex(), 0);
+        assertSame(m.getMinColumnIndex(), 0);
 
-    assertSame(m.getNumRows(),9);
-    assertSame(m.getNumColumns(),9);
-    assertSame(m.getMinRowIndex(),2);
-    assertSame(m.getMinColumnIndex(),2);
+        m.set(2, 2, 2);
+        m.set(9, 9, 9);
 
-    assertSame(m.get(2,2),2);
-    assertSame(m.get(9,9),9);
-    assertSame(m.nnz(),2);
+        assertSame(m.getNumRows(), 9);
+        assertSame(m.getNumColumns(), 9);
+        assertSame(m.getMinRowIndex(), 2);
+        assertSame(m.getMinColumnIndex(), 2);
 
-    m.set(2,2,3);
-    assertSame(m.get(2,2),3);
-    assertSame(m.nnz(),2);
+        assertSame(m.get(2, 2), 2);
+        assertSame(m.get(9, 9), 9);
+        assertSame(m.nnz(), 2);
 
-    m.set(2,2,null);
-    assertSame(m.get(2,2),null);
-    assertSame(m.nnz(),1);
+        m.set(2, 2, 3);
+        assertSame(m.get(2, 2), 3);
+        assertSame(m.nnz(), 2);
 
-    m.set(2,2,2);
+        m.set(2, 2, null);
+        assertSame(m.get(2, 2), null);
+        assertSame(m.nnz(), 1);
 
-    m.set(4,2,-1);
-    assertSame(m.get(4,2),-1);
-    assertSame(m.get(2,4),null);
+        m.set(2, 2, 2);
 
-    int[] ri=m.getColumnRowIndices(2);
-    Vector<Integer> v=m.getColumnEntries(2);
+        m.set(4, 2, -1);
+        assertSame(m.get(4, 2), -1);
+        assertSame(m.get(2, 4), null);
 
-    assertSame(ri.length,2);
-    assertSame(m.columnDegree(2),2);
-    assertSame(ri[0],2);
-    assertSame(ri[1],4);
-    assertEquals(v.at(0),new Integer(2));
-    assertEquals(v.at(1),new Integer(-1));
+        int[] ri = m.getColumnRowIndices(2);
+        Vector<Integer> v = m.getColumnEntries(2);
 
-    int[] ci=m.getRowColumnIndices(2);
-    v=m.getRowEntries(2);
-    assertSame(ci.length,1);
-    assertSame(m.rowDegree(2),1);
-    assertSame(v.size(),1);
+        assertSame(ri.length, 2);
+        assertSame(m.columnDegree(2), 2);
+        assertSame(ri[0], 2);
+        assertSame(ri[1], 4);
+        assertEquals(v.at(0), new Integer(2));
+        assertEquals(v.at(1), new Integer(-1));
 
-    assertSame(ci[0],2);
-    assertEquals(v.at(0),new Integer(2));
-  }
+        int[] ci = m.getRowColumnIndices(2);
+        v = m.getRowEntries(2);
+        assertSame(ci.length, 1);
+        assertSame(m.rowDegree(2), 1);
+        assertSame(v.size(), 1);
 
-  @Test
-  public void testSymmatrixMatrix() {
-    SparseMatrix<Integer> m=new SparseMatrix<Integer>(true);
-    assertTrue(m.isSymmetricMatrix());
+        assertSame(ci[0], 2);
+        assertEquals(v.at(0), new Integer(2));
+    }
 
-    assertSame(m.nnz(),0);
-    assertSame(m.getNumRows(),0);
-    assertSame(m.getNumColumns(),0);
-    assertSame(m.getMinRowIndex(),0);
-    assertSame(m.getMinColumnIndex(),0);
+    @Test
+    public void testSymmatrixMatrix() {
+        SparseMatrix<Integer> m = new SparseMatrix<Integer>(true);
+        assertTrue(m.isSymmetricMatrix());
 
-    m.set(2,2,2);
-    m.set(9,9,9);
+        assertSame(m.nnz(), 0);
+        assertSame(m.getNumRows(), 0);
+        assertSame(m.getNumColumns(), 0);
+        assertSame(m.getMinRowIndex(), 0);
+        assertSame(m.getMinColumnIndex(), 0);
 
-    assertSame(m.getNumRows(),9);
-    assertSame(m.getNumColumns(),9);
-    assertSame(m.getMinRowIndex(),2);
-    assertSame(m.getMinColumnIndex(),2);
+        m.set(2, 2, 2);
+        m.set(9, 9, 9);
 
-    assertSame(m.get(2,2),2);
-    assertSame(m.get(9,9),9);
-    assertSame(m.nnz(),2);
+        assertSame(m.getNumRows(), 9);
+        assertSame(m.getNumColumns(), 9);
+        assertSame(m.getMinRowIndex(), 2);
+        assertSame(m.getMinColumnIndex(), 2);
 
-    m.set(2,2,3);
-    assertSame(m.get(2,2),3);
-    assertSame(m.nnz(),2);
+        assertSame(m.get(2, 2), 2);
+        assertSame(m.get(9, 9), 9);
+        assertSame(m.nnz(), 2);
 
-    m.set(2,2,null);
-    assertSame(m.get(2,2),null);
-    assertSame(m.nnz(),1);
+        m.set(2, 2, 3);
+        assertSame(m.get(2, 2), 3);
+        assertSame(m.nnz(), 2);
 
-    m.set(2,2,2);
+        m.set(2, 2, null);
+        assertSame(m.get(2, 2), null);
+        assertSame(m.nnz(), 1);
 
-    m.set(4,2,-1);
-    assertSame(m.get(4,2),-1);
-    assertSame(m.get(2,4),-1);
+        m.set(2, 2, 2);
 
-    int[] ri=m.getColumnRowIndices(2);
-    Vector<Integer> v=m.getColumnEntries(2);
+        m.set(4, 2, -1);
+        assertSame(m.get(4, 2), -1);
+        assertSame(m.get(2, 4), -1);
 
-    assertSame(ri.length,2);
-    assertSame(m.columnDegree(2),2);
-    assertSame(ri[0],2);
-    assertSame(ri[1],4);
-    assertEquals(v.at(0),new Integer(2));
-    assertEquals(v.at(1),new Integer(-1));
+        int[] ri = m.getColumnRowIndices(2);
+        Vector<Integer> v = m.getColumnEntries(2);
 
-    int[] ci=m.getRowColumnIndices(2);
-    v=m.getRowEntries(2);
-    assertSame(ci[0],2);
-    assertSame(ci[1],4);
-    assertEquals(v.at(0),new Integer(2));
-    assertEquals(v.at(1),new Integer(-1));
-  }
+        assertSame(ri.length, 2);
+        assertSame(m.columnDegree(2), 2);
+        assertSame(ri[0], 2);
+        assertSame(ri[1], 4);
+        assertEquals(v.at(0), new Integer(2));
+        assertEquals(v.at(1), new Integer(-1));
 
-  public static void main(String args[]) {
-    org.junit.runner.JUnitCore.main("aud.test.SparseMatrixTest");
-  }
+        int[] ci = m.getRowColumnIndices(2);
+        v = m.getRowEntries(2);
+        assertSame(ci[0], 2);
+        assertSame(ci[1], 4);
+        assertEquals(v.at(0), new Integer(2));
+        assertEquals(v.at(1), new Integer(-1));
+    }
 }

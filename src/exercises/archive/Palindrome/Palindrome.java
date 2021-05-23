@@ -19,8 +19,8 @@ public class Palindrome {
 
 
         while (!stackFromFront.isEmpty()) {
-            System.out.println("sfF: " + stackFromFront.toString());
-            System.out.println("sfB: " + stackFromBack.toString());
+            System.out.println("sfF: " + stackFromFront);
+            System.out.println("sfB: " + stackFromBack);
             if (!stackFromFront.pop().toString().equals(stackFromBack.pop().toString())) return false;
         }
         return true;

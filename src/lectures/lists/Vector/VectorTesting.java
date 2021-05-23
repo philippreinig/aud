@@ -32,7 +32,7 @@ public class VectorTesting {
             System.out.println(stringVector.getCapacity());
             System.out.println(stringVector.getSize());
 
-            System.out.println(stringVector.at(10).toString());
+            System.out.println(stringVector.at(10));
 
             for (int i = stringVector.getSize() - 1; i > 10; i--) {
                 stringVector.erase(i);
