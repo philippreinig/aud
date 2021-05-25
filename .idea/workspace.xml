@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad85c623-d910-436a-bf4d-63b134285d13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/current/two34Tree/A234Example.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/current/two34Tree/A234Tree.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/adhoc/BinaryTreeAdHoc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/current/AVLTree/AVLExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/current/AVLTree/AVLExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.A234Example">
+  <component name="RunManager" selected="Application.BinaryTreeAdHoc">
     <configuration name="A234Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exercises.current.two34Tree.A234Example" />
       <module name="aud" />
@@ -100,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="aud.test.SListTest" />
+    <configuration name="AVLExample2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.current.AVLTree.AVLExample2" />
       <module name="aud" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aud.test.*" />
+          <option name="PATTERN" value="exercises.current.AVLTree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tokenizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="aud.example.expr.Tokenizer" />
+    <configuration name="BinaryTreeAdHoc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="adhoc.BinaryTreeAdHoc" />
       <module name="aud" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aud.example.expr.*" />
+          <option name="PATTERN" value="adhoc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,15 +124,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinaryTreeAdHoc" />
+        <item itemvalue="Application.AVLExample2" />
         <item itemvalue="Application.A234Example" />
         <item itemvalue="Application.AVLExample" />
         <item itemvalue="JUnit.All in aud" />
-        <item itemvalue="Application.SListTest" />
-        <item itemvalue="Application.Tokenizer" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +172,10 @@
       <workItem from="1621698084450" duration="1140000" />
       <workItem from="1621782441410" duration="2257000" />
       <workItem from="1621784736608" duration="12001000" />
-      <workItem from="1621799982504" duration="3145000" />
+      <workItem from="1621799982504" duration="3349000" />
+      <workItem from="1621922499449" duration="361000" />
+      <workItem from="1621925000641" duration="1359000" />
+      <workItem from="1621974023161" duration="849000" />
     </task>
     <servers />
   </component>
