@@ -1,6 +1,6 @@
 import aud.util.DotViewer;
-import exercises.archive.BuildBinTree;
-import exercises.archive.IntBinTree2;
+import exercises.week04.BuildBinTree;
+import exercises.week05.IntBinTree2;
 
 public class Test {
     public static void main(String[] args) {

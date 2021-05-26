@@ -1,6 +1,6 @@
 package adhoc;
 
-import exercises.archive.Palindrome.Stack;
+import exercises.week01.Palindrome.Stack;
 
 public class InfixToPostfix {
 
