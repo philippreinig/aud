@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad85c623-d910-436a-bf4d-63b134285d13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/exercises/week08/B08-1_BTree.md " afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/week08/MyBTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adhoc/InfixToPostfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adhoc/InfixToPostfix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/BuildBinTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week04/BuildBinTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Differentiation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week06/Differentiation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/ExampleExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week05/ExampleExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/ExprWithPow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week06/ExprWithPow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/ForwardList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week04/ForwardList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/IntBinTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week05/IntBinTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/IntBinTree2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week05/IntBinTree2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/IntSList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week02/IntSList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/LinkedNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week02/LinkedNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/MyBinTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week05/MyBinTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/MyCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week03/MyCircle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/MyDList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week03/MyDList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/MySList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week03/MySList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/AbstractStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week01/Palindrome/AbstractStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week01/Palindrome/Palindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week01/Palindrome/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/Palindrome/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week01/Palindrome/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/RecursionToIterative/RecursionToStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week04/RecursionToIterative/RecursionToStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/RecursionToIterative/what_rec.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week04/RecursionToIterative/what_rec.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/SimpleTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week06/SimpleTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/TPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week02/TPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/archive/TailRecursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week01/TailRecursion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/current/AVLTree/AVLExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week07/AVLTree/AVLExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/current/AVLTree/AVLTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week07/AVLTree/AVLTree.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/current/two34Tree/A234Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week07/two34Tree/A234Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/current/two34Tree/A234Tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week07/two34Tree/A234Tree.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/batik/xmlgraphics-commons-2.6.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,33 +72,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RedBlackExample">
-    <configuration name="A234Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.week07.two34Tree.A234Example" />
-      <module name="aud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.week07.two34Tree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AVLExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.week07.AVLTree.AVLExample" />
-      <module name="aud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.week07.AVLTree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.MyBTree">
     <configuration name="AVLExample2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exercises.current.AVLTree.AVLExample2" />
       <module name="aud" />
@@ -144,6 +92,33 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="adhoc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KTreeNode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aud.KTreeNode" />
+      <module name="aud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week08.MyBTree" />
+      <module name="aud" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.week08.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyBTree" />
+        <item itemvalue="Application.KTreeNode" />
         <item itemvalue="Application.RedBlackExample" />
         <item itemvalue="Application.BinaryTreeAdHoc" />
         <item itemvalue="Application.AVLExample2" />
-        <item itemvalue="Application.A234Example" />
-        <item itemvalue="Application.AVLExample" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +184,10 @@
       <workItem from="1621925000641" duration="1359000" />
       <workItem from="1621974023161" duration="1060000" />
       <workItem from="1622062228501" duration="470000" />
-      <workItem from="1622062718018" duration="2550000" />
+      <workItem from="1622062718018" duration="2697000" />
+      <workItem from="1622238292417" duration="66000" />
+      <workItem from="1622404882495" duration="1011000" />
+      <workItem from="1622461059012" duration="5136000" />
     </task>
     <servers />
   </component>
