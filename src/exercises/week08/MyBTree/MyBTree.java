@@ -1,4 +1,4 @@
-package exercises.week08;
+package exercises.week08.MyBTree;
 
 import aud.BTree;
 import aud.KTreeNode;
