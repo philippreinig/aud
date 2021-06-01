@@ -2,9 +2,9 @@ package adhoc;
 
 import java.util.*;
 
-public class HeapSort {
+public class HeapSortActuallySelectionSort {
     private static Integer[] swapMax(Integer[] nums, int n){
-        int max_index =  0; //getMax(nums, n);
+        int max_index =  getMax(nums, n);
         int temp = nums[n-1];
         nums[n-1] = nums[max_index];
         nums[max_index] = temp;
@@ -20,7 +20,7 @@ public class HeapSort {
     }
     private static Integer[] heapSort(Integer[] nums){
         Integer[] nums_sorted = nums;
-        for(int i = nums.length-1; i > 0; i--){
+        for(int i = nums.length; i > 0; i--){
             nums_sorted = heapSort(nums_sorted, i);
         }
         return nums_sorted;

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad85c623-d910-436a-bf4d-63b134285d13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/exercises/week08/MyBTree/B08-1_BTree.md " beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week08/MyBTree/B08-1_BTree.md " afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/adhoc/HeapSortActuallySelectionSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/week08/MaxHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/week08/MaxHeapSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/week08/MyBTree/B08-2_Heap.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week08/B08-2_Heap.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,34 +63,25 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/exercises/current/SimpleTree.java" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/aud/example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/exercises/week08" />
       <recent name="$PROJECT_DIR$/src/exercises/week08/MyBTree" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MyBTree">
-    <configuration name="AVLExample2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.current.AVLTree.AVLExample2" />
-      <module name="aud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.week07.AVLTree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinaryTreeAdHoc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="adhoc.BinaryTreeAdHoc" />
+  <component name="RunManager" selected="Application.MaxHeap">
+    <configuration name="HeapSortActuallySelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="adhoc.HeapSortActuallySelectionSort" />
       <module name="aud" />
       <extension name="coverage">
         <pattern>
@@ -111,10 +106,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyBTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.week08.MyBTree" />
+    <configuration name="MaxHeap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week08.MaxHeap" />
       <module name="aud" />
-      <option name="VM_PARAMETERS" value="-ea" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="exercises.week08.*" />
@@ -125,12 +119,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RedBlackExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.week07.redBlackTree.RedBlackExample" />
+    <configuration name="MaxHeapSolution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week08.MaxHeapSolution" />
       <module name="aud" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exercises.week07.redBlackTree.*" />
+          <option name="PATTERN" value="exercises.week08.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week08.MyBTree" />
+      <module name="aud" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="adhoc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaxHeap" />
+        <item itemvalue="Application.MaxHeapSolution" />
+        <item itemvalue="Application.HeapSortActuallySelectionSort" />
         <item itemvalue="Application.MyBTree" />
         <item itemvalue="Application.KTreeNode" />
-        <item itemvalue="Application.RedBlackExample" />
-        <item itemvalue="Application.BinaryTreeAdHoc" />
-        <item itemvalue="Application.AVLExample2" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +194,9 @@
       <workItem from="1622062718018" duration="2697000" />
       <workItem from="1622238292417" duration="66000" />
       <workItem from="1622404882495" duration="1011000" />
-      <workItem from="1622461059012" duration="9764000" />
+      <workItem from="1622461059012" duration="9813000" />
+      <workItem from="1622528250594" duration="3027000" />
+      <workItem from="1622541955313" duration="10639000" />
     </task>
     <servers />
   </component>
@@ -225,6 +235,10 @@
           <properties class="org.xml.sax.SAXNotSupportedException" package="org.xml.sax" />
           <option name="timeStamp" value="11" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="14" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/aud/example/expr/ExpressionParser.java</url>
           <line>78</line>
@@ -234,6 +248,11 @@
           <url>file://$PROJECT_DIR$/src/exercises/week06/Differentiation.java</url>
           <line>16</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/week08/MaxHeap.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
