@@ -131,5 +131,9 @@ public class MaxHeap<T extends Comparable<T>> {
         MaxHeap<Integer> mh = new MaxHeap<>(arr);
         System.out.println(mh);
 
+        String[] arr_string = {"I", "T", "G", "O", "N", "M", "N", "R", "E", "A", "A", "X"};
+        MaxHeap<String> mh2 = new MaxHeap<>(arr_string);
+        System.out.println(mh2);
+
     }
 }

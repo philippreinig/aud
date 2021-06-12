@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad85c623-d910-436a-bf4d-63b134285d13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/adhoc/HeapSortActuallySelectionSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/week08/MaxHeap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/week08/MaxHeapSolution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/week09/HashLinQuad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/week08/MyBTree/B08-2_Heap.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week08/B08-2_Heap.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/week08/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/week08/MaxHeap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,13 +77,13 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MaxHeap">
-    <configuration name="HeapSortActuallySelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="adhoc.HeapSortActuallySelectionSort" />
+  <component name="RunManager" selected="Application.MyHash">
+    <configuration name="Food" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week09.food.Food" />
       <module name="aud" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="adhoc.*" />
+          <option name="PATTERN" value="exercises.week09.food.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,12 +91,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KTreeNode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="aud.KTreeNode" />
+    <configuration name="HashLinQuad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week09.HashLinQuad" />
       <module name="aud" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aud.*" />
+          <option name="PATTERN" value="exercises.week09.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IceBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week09.food.IceBox" />
+      <module name="aud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.week09.food.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,26 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxHeapSolution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.week08.MaxHeapSolution" />
-      <module name="aud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.week08.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyBTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.week08.MyBTree" />
+    <configuration name="MyHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.week09.hashfunction.MyHash" />
       <module name="aud" />
       <option name="VM_PARAMETERS" value="-ea" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="adhoc.*" />
+          <option name="PATTERN" value="exercises.week09.hashfunction.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,24 +144,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Food" />
+      <item itemvalue="Application.HashLinQuad" />
+      <item itemvalue="Application.IceBox" />
+      <item itemvalue="Application.MaxHeap" />
+      <item itemvalue="Application.MyHash" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyHash" />
+        <item itemvalue="Application.IceBox" />
+        <item itemvalue="Application.Food" />
+        <item itemvalue="Application.HashLinQuad" />
         <item itemvalue="Application.MaxHeap" />
-        <item itemvalue="Application.MaxHeapSolution" />
-        <item itemvalue="Application.HeapSortActuallySelectionSort" />
-        <item itemvalue="Application.MyBTree" />
-        <item itemvalue="Application.KTreeNode" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +190,11 @@
       <workItem from="1622404882495" duration="1011000" />
       <workItem from="1622461059012" duration="9813000" />
       <workItem from="1622528250594" duration="3027000" />
-      <workItem from="1622541955313" duration="10639000" />
+      <workItem from="1622541955313" duration="20037000" />
+      <workItem from="1622708645833" duration="337000" />
+      <workItem from="1622709008814" duration="6018000" />
+      <workItem from="1623130627221" duration="149000" />
+      <workItem from="1623452867435" duration="414000" />
     </task>
     <servers />
   </component>
@@ -228,10 +226,6 @@
           <option name="timeStamp" value="4" />
         </breakpoint>
         <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.RuntimeException" package="java.lang" />
-          <option name="timeStamp" value="10" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
           <properties class="org.xml.sax.SAXNotSupportedException" package="org.xml.sax" />
           <option name="timeStamp" value="11" />
         </breakpoint>
@@ -248,11 +242,6 @@
           <url>file://$PROJECT_DIR$/src/exercises/week06/Differentiation.java</url>
           <line>16</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/exercises/week08/MaxHeap.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
