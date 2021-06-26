@@ -40,8 +40,7 @@ class Vertex<T>{
     }
 
     public boolean hasNeighbour(Vertex<T> neighbour){
-        if (this.neighbours.contains(neighbour)) return true;
-        else return false;
+        return this.neighbours.contains(neighbour);
     }
 
     public T getData(){
@@ -49,11 +48,8 @@ class Vertex<T>{
     }
 
 
-
-    // @Override
-    // public boolean equals(Vertex<T> other){
-    //     return this.data.equals(other.getData());
-    // }
-
-
+    @Override
+    public boolean equals(Object other){
+        return other instanceof Vertex<?> &&this.getData().equals(((Vertex<?>)other).getData());
+    }
 }

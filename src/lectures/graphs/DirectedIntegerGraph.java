@@ -30,10 +30,12 @@ public class DirectedIntegerGraph {
             return false;
     }
 
-    // public void addEdge(Vertex<Integer> vertex1, Vertex<Integer> vertex2){
-    //     if (this.nodes.contains(vertex1) && vertex1.){
-    //         vertex1.addNeighbour(vertex2);
-    // }
-
-    
+     public boolean addEdge(Vertex<Integer> vertex1, Vertex<Integer> vertex2){
+         if (this.nodes.contains(vertex1) && vertex1.getNeighbours().contains(vertex2))
+             return false;
+         else{
+             vertex1.addNeighbour(vertex2);
+             return true;
+         }
+     }
 }
