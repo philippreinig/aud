@@ -27,7 +27,7 @@ man verändert die Reihenfolge der eingehenden Kanten, die man zurückläuft
 Vollständige Abhängigkeiten:
 https://bit.ly/3A1PwGx
 Abhängigkeiten sodass topologische Reihenfolge existiert:
-https://bit.ly/3jjF1IX
+    https://bit.ly/3jjF1IX
 
 -> Es müssen min. 4 Kanten entfernt werden, damit eine topologische Reihenfolge existiert
 Für eine topologische Reihenfolge darf es keine Zyklen geben, in dem man 4 Kanten entfernt kann man einen azyklischen Graphen erzeugen

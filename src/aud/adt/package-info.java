@@ -1,4 +1,3 @@
-/**
- * abstract data types
- */
+/** abstract data types
+*/
 package aud.adt;

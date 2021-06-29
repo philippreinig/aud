@@ -1,4 +1,3 @@
-/**
- * examples and demos
- */
+/** examples and demos
+*/
 package aud.example;
