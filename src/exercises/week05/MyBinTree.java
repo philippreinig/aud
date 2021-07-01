@@ -16,30 +16,6 @@ public class MyBinTree<T> extends BinaryTree<T> {
         super(data, left, right);
     }
 
-    //---------------------------------------------------------------//
-    public static void main(String[] args) {
-        MyBinTree<Integer> rightChild21 = new MyBinTree<>(-11, null, null);
-        MyBinTree<Integer> leftChild21 = new MyBinTree<>(6, null, null);
-        MyBinTree<Integer> leftChild1 = new MyBinTree<>(4, leftChild21, rightChild21);
-        MyBinTree<Integer> leftChild22 = new MyBinTree<>(5);
-        MyBinTree<Integer> rightChild22 = new MyBinTree<>(7);
-        MyBinTree<Integer> rightChild1 = new MyBinTree<>(1, leftChild22, rightChild22);
-        MyBinTree<Integer> tree = new MyBinTree<>(-8, leftChild1, rightChild1);
-        tree.traverse(tree);
-
-        System.out.println("Height of tree: " + tree.getHeight());
-        System.out.println("Height of subtree 4: " + leftChild1.getHeight());
-        System.out.println("Height of subtree 6: " + leftChild21.getHeight());
-
-        System.out.println("Width on level 1 is: " + tree.getWidthOnLevel(tree, 1));
-        System.out.println("Width on level 1 is: " + tree.getWidthOnLevel(tree, 2));
-        System.out.println("Width on level 1 is: " + tree.getWidthOnLevel(tree, 3));
-
-        System.out.println("Max width of tree is: " + tree.maxWidth());
-
-        DotViewer.displayWindow(tree.toDot(), "testing trees");
-    }
-
     private void traverse(MyBinTree<T> root) {
         Queue<MyBinTree<T>> queue = new Queue<>();
         queue.enqueue(root);
@@ -84,5 +60,29 @@ public class MyBinTree<T> extends BinaryTree<T> {
         // TODO:
         // - implement to return the maximum width of the binary tree
         // - you can use a queue for your solution
+    }
+
+    //---------------------------------------------------------------//
+    public static void main(String[] args) {
+        MyBinTree<Integer> rightChild21 = new MyBinTree<>(-11, null, null);
+        MyBinTree<Integer> leftChild21 = new MyBinTree<>(6, null, null);
+        MyBinTree<Integer> leftChild1 = new MyBinTree<>(4, leftChild21, rightChild21);
+        MyBinTree<Integer> leftChild22 = new MyBinTree<>(5);
+        MyBinTree<Integer> rightChild22 = new MyBinTree<>(7);
+        MyBinTree<Integer> rightChild1 = new MyBinTree<>(1, leftChild22, rightChild22);
+        MyBinTree<Integer> tree = new MyBinTree<>(-8, leftChild1, rightChild1);
+        tree.traverse(tree);
+
+        System.out.println("Height of tree: " + tree.getHeight());
+        System.out.println("Height of subtree 4: " + leftChild1.getHeight());
+        System.out.println("Height of subtree 6: " + leftChild21.getHeight());
+
+        System.out.println("Width on level 1 is: " + tree.getWidthOnLevel(tree, 1));
+        System.out.println("Width on level 1 is: " + tree.getWidthOnLevel(tree, 2));
+        System.out.println("Width on level 1 is: " + tree.getWidthOnLevel(tree, 3));
+
+        System.out.println("Max width of tree is: " + tree.maxWidth());
+
+        DotViewer.displayWindow(tree.toDot(), "testing trees");
     }
 }

@@ -1,10 +1,9 @@
 <component name="libraryTable">
-  <library name="batik-swing-1.14">
+  <library name="batik">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/batik/batik-all-1.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik/batik-anim-1.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik/batik-awt-util-1.14.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/batik/batik-bridge-1.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik/batik-codec-1.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik/batik-constants-1.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik/batik-css-1.14.jar!/" />
@@ -43,7 +42,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/batik/batik-test-old-1.14.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/batik" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib/batik" recursive="false" type="SOURCES" />
   </library>
 </component>

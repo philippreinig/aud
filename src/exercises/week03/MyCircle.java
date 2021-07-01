@@ -9,48 +9,6 @@ public class MyCircle<T> {
         this.head_ = null;
     }
 
-    public static void main(String[] args) {
-        // -------- empty --------------------------------------
-        System.out.println("============= Testing empty =============");
-        MyCircle<Integer> myc1 = new MyCircle<>();
-        System.out.println("should be empty: " + myc1.empty());
-        myc1.push_back(1);
-        System.out.println("should not be empty: " + myc1.empty());
-        // -------- push_back ---------------------------------------
-        MyCircle<Integer> myc2 = new MyCircle<>();
-        System.out.println("============= Testing push_back =============");
-        System.out.println("should contain nothing: " + myc2);
-        for (int i = 0; i < 10; i++) myc2.push_back(i);
-        System.out.println("should be [0,1,2,3,4,5,6,7,8,9]: " + myc2);
-        // -------- size ---------------------------------------
-        System.out.println("============= Testing size =============");
-        MyCircle<Integer> myc3 = new MyCircle<>();
-        System.out.println("size should be 0: " + myc3.size());
-        myc3.push_back(1);
-        System.out.println("size should be 1: " + myc3.size());
-        for (int i = 0; i < 9; i++) myc3.push_back(i);
-        System.out.println("size should be 10: " + myc3.size());
-        // -------- pop_front ---------------------------------------
-        System.out.println("============= Testing pop_front =============");
-        MyCircle<Integer> myc4 = new MyCircle<>();
-        System.out.print("Should throw NoSuchElementException(): ");
-        try {
-            myc4.pop_front();
-        } catch (NoSuchElementException exc) {
-            System.out.println("NoSuchElementExcpetion caught!");
-
-        }
-
-        myc4.push_back(1);
-        myc4.pop_front();
-        System.out.println("Should be empty: " + myc4);
-
-        for (int i = 0; i < 10; i++) myc4.push_back(i);
-        System.out.println("should be [0,1,2,3,4,5,6,7,8,9]: " + myc4);
-        for (int i = 0; i < 5; i++) myc4.pop_front();
-        System.out.println("should be [5,6,7,8,9]: " + myc4);
-    }
-
     public Node getHead() {
         return this.head_;
     }
@@ -150,6 +108,48 @@ public class MyCircle<T> {
         public String toString() {
             return "data: " + this.data_ + ", prev: " + this.prev_ + ", next: " + this.next_;
         }
+    }
+
+    public static void main(String[] args) {
+        // -------- empty --------------------------------------
+        System.out.println("============= Testing empty =============");
+        MyCircle<Integer> myc1 = new MyCircle<>();
+        System.out.println("should be empty: " + myc1.empty());
+        myc1.push_back(1);
+        System.out.println("should not be empty: " + myc1.empty());
+        // -------- push_back ---------------------------------------
+        MyCircle<Integer> myc2 = new MyCircle<>();
+        System.out.println("============= Testing push_back =============");
+        System.out.println("should contain nothing: " + myc2);
+        for (int i = 0; i < 10; i++) myc2.push_back(i);
+        System.out.println("should be [0,1,2,3,4,5,6,7,8,9]: " + myc2);
+        // -------- size ---------------------------------------
+        System.out.println("============= Testing size =============");
+        MyCircle<Integer> myc3 = new MyCircle<>();
+        System.out.println("size should be 0: " + myc3.size());
+        myc3.push_back(1);
+        System.out.println("size should be 1: " + myc3.size());
+        for (int i = 0; i < 9; i++) myc3.push_back(i);
+        System.out.println("size should be 10: " + myc3.size());
+        // -------- pop_front ---------------------------------------
+        System.out.println("============= Testing pop_front =============");
+        MyCircle<Integer> myc4 = new MyCircle<>();
+        System.out.print("Should throw NoSuchElementException(): ");
+        try {
+            myc4.pop_front();
+        } catch (NoSuchElementException exc) {
+            System.out.println("NoSuchElementExcpetion caught!");
+
+        }
+
+        myc4.push_back(1);
+        myc4.pop_front();
+        System.out.println("Should be empty: " + myc4);
+
+        for (int i = 0; i < 10; i++) myc4.push_back(i);
+        System.out.println("should be [0,1,2,3,4,5,6,7,8,9]: " + myc4);
+        for (int i = 0; i < 5; i++) myc4.pop_front();
+        System.out.println("should be [5,6,7,8,9]: " + myc4);
     }
 
 

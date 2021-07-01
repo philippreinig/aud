@@ -9,10 +9,6 @@ import aud.example.expr.*;
  * ExpressionParser which is able the process `power to`.
  */
 public class ExprWithPow extends ExpressionParser2 {
-    //----------------------------------------------------------------//
-    public static void main(String[] args) {
-    }
-
     /**
      * <product> ::= <power> | <power> "*" <product> | <power> "/" <product>
      * <factor> ::= <number> | <symbol> | "-" <factor> | "+" <factor> | "(" * <expression> ")"
@@ -58,5 +54,9 @@ public class ExprWithPow extends ExpressionParser2 {
             return new ExpressionTree(new Power(), left, right);
         }
         return left;
+    }
+
+    //----------------------------------------------------------------//
+    public static void main(String[] args) {
     }
 }

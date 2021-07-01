@@ -5,22 +5,6 @@ import aud.Queue;
 import aud.util.DotViewer;
 
 public class BuildBinTree<T> {
-    public static void main(String[] args) {
-        BinaryTree<Integer> rightChild21 = new BinaryTree<>(-11, null, null);
-        BinaryTree<Integer> leftChild21 = new BinaryTree<>(6, null, null);
-        BinaryTree<Integer> leftChild1 = new BinaryTree<>(4, leftChild21, rightChild21);
-        BinaryTree<Integer> leftChild22 = new BinaryTree<>(5);
-        BinaryTree<Integer> rightChild22 = new BinaryTree<>(7);
-        BinaryTree<Integer> rightChild1 = new BinaryTree<>(1, leftChild22, rightChild22);
-        BinaryTree<Integer> tree = new BinaryTree<>(-8, leftChild1, rightChild1);
-
-        BuildBinTree<Integer> bbb = new BuildBinTree<>();
-        bbb.printAll(tree);
-
-
-        DotViewer.displayWindow(tree, "BinaryTree").setExitOnClose();
-    }
-
     public void printPreorder(BinaryTree<T> node) {
         if (node != null) {
             System.out.print(node.getData().toString() + " ");
@@ -71,5 +55,21 @@ public class BuildBinTree<T> {
         System.out.println("Printing tree in levelorder: ");
         printLevelorder(tree);
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        BinaryTree<Integer> rightChild21 = new BinaryTree<>(-11, null, null);
+        BinaryTree<Integer> leftChild21 = new BinaryTree<>(6, null, null);
+        BinaryTree<Integer> leftChild1 = new BinaryTree<>(4, leftChild21, rightChild21);
+        BinaryTree<Integer> leftChild22 = new BinaryTree<>(5);
+        BinaryTree<Integer> rightChild22 = new BinaryTree<>(7);
+        BinaryTree<Integer> rightChild1 = new BinaryTree<>(1, leftChild22, rightChild22);
+        BinaryTree<Integer> tree = new BinaryTree<>(-8, leftChild1, rightChild1);
+
+        BuildBinTree<Integer> bbb = new BuildBinTree<>();
+        bbb.printAll(tree);
+
+
+        DotViewer.displayWindow(tree, "BinaryTree").setExitOnClose();
     }
 }

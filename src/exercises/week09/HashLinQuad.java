@@ -5,18 +5,20 @@ package exercises.week09;
 import java.util.Arrays;
 import java.util.Random;
 
-/** simple Hashtable with linear/quadratic probing
- capacity is big enough */
+/**
+ * simple Hashtable with linear/quadratic probing
+ * capacity is big enough
+ */
 
 public class HashLinQuad {
-    private static final boolean DEBUG = false ;
+    private static final boolean DEBUG = false;
     //---------------------------------------------------------------//
     private final int[] table;    // array of buckets or slots
-    private int size;       // current number of elements
     private final int capacity;
+    private int size;       // current number of elements
     private int quadSummandRoot = 1;
 
-    HashLinQuad(int capacity){
+    HashLinQuad(int capacity) {
         this.capacity = capacity;
         this.table = new int[capacity];
     }
@@ -29,9 +31,9 @@ public class HashLinQuad {
         int counter = 0;
         while (table[pos] != 0) {
             counter++;
-            if (pos+1 > table.length-1) pos = 0;
+            if (pos + 1 > table.length - 1) pos = 0;
             else pos++;
-            if(counter == capacity) throw new IllegalStateException();
+            if (counter == capacity) throw new IllegalStateException();
         }
         table[pos] = obj;
         if (DEBUG) System.out.println("After insertion lin: " + Arrays.toString(table) + "collisions: " + counter);
@@ -49,7 +51,7 @@ public class HashLinQuad {
             counter++;
 
             for (int i = 0; i < quadSummandRoot * quadSummandRoot; i++) {
-                if (pos+1 > table.length-1) pos = 0;
+                if (pos + 1 > table.length - 1) pos = 0;
                 else pos++;
             }
             quadSummandRoot++;
@@ -78,13 +80,13 @@ public class HashLinQuad {
         int counterLin = 0;
         int counterQuad = 0;
 
-        for (int i = 0; i < amountToInsert; i++){
-           counterLin += hlq_lin.addLin(rand.nextInt(max)+1);
+        for (int i = 0; i < amountToInsert; i++) {
+            counterLin += hlq_lin.addLin(rand.nextInt(max) + 1);
         }
 
         HashLinQuad hlq_quad = new HashLinQuad(capacity);
-        for (int i = 0; i < amountToInsert; i++){
-           counterQuad += hlq_quad.addQuad(rand.nextInt(max)+1);
+        for (int i = 0; i < amountToInsert; i++) {
+            counterQuad += hlq_quad.addQuad(rand.nextInt(max) + 1);
         }
 
         System.out.println("Collisions for linear probing: " + counterLin);

@@ -23,37 +23,6 @@ public class IntBinTree2 extends BinaryTree<Integer> {
     }
 
     //---------------------------------------------------------------//
-    public static void main(String[] args) {
-        IntBinTree2 rightChild21 = new IntBinTree2(-11, null, null);
-        IntBinTree2 leftChild3 = new IntBinTree2(10, null, null);
-        IntBinTree2 leftChild21 = new IntBinTree2(6, leftChild3, null);
-        IntBinTree2 leftChild1 = new IntBinTree2(4, leftChild21, rightChild21);
-        IntBinTree2 leftChild22 = new IntBinTree2(5, null, null);
-        IntBinTree2 rightChild22 = new IntBinTree2(7, null, null);
-        IntBinTree2 rightChild1 = new IntBinTree2(1, leftChild22, rightChild22);
-        IntBinTree2 tree = new IntBinTree2(-8, leftChild1, rightChild1);
-
-        IntBinTree2[] array = {tree, leftChild1, rightChild1, leftChild21, rightChild21, leftChild22, rightChild22, leftChild3};
-
-        System.out.println("--------- Height of each node ----------------");
-        System.out.println("CORRECT");
-        //for(IntBinTree ibt : array) System.out.println(ibt.getData() + ": " + ibt.height());
-        System.out.println("-------- Max sum of each node ----------------");
-        //System.out.println("CORRECT");
-        for (IntBinTree2 ibt : array) System.out.println(ibt.getData() + ": " + ibt.maxSum());
-        System.out.println("-------- Max Path sum ----------------");
-        for (IntBinTree2 ibt : array) System.out.println(ibt.getData() + ": " + ibt.maxPath());
-        System.out.println("-------- Get all leafs ----------------");
-        System.out.println("CORRECT");
-        //for(IntBinTree ibt : array) System.out.println(ibt.getData() + ": " + Arrays.toString(ibt.getAllLeafs().toArray()));
-
-//        BuildBinTree<Integer> bbb = new BuildBinTree<>();
-//        bbb.printAll(tree);
-
-        //DotViewer.displayWindow(tree, "BinaryTree").setExitOnClose();
-    }
-
-    //---------------------------------------------------------------//
     public int height() {
         return height(1);
     }
@@ -134,5 +103,36 @@ public class IntBinTree2 extends BinaryTree<Integer> {
             if (stack.is_empty()) throw new NoSuchElementException();
             return stack.pop();
         }
+    }
+
+    //---------------------------------------------------------------//
+    public static void main(String[] args) {
+        IntBinTree2 rightChild21 = new IntBinTree2(-11, null, null);
+        IntBinTree2 leftChild3 = new IntBinTree2(10, null, null);
+        IntBinTree2 leftChild21 = new IntBinTree2(6, leftChild3, null);
+        IntBinTree2 leftChild1 = new IntBinTree2(4, leftChild21, rightChild21);
+        IntBinTree2 leftChild22 = new IntBinTree2(5, null, null);
+        IntBinTree2 rightChild22 = new IntBinTree2(7, null, null);
+        IntBinTree2 rightChild1 = new IntBinTree2(1, leftChild22, rightChild22);
+        IntBinTree2 tree = new IntBinTree2(-8, leftChild1, rightChild1);
+
+        IntBinTree2[] array = {tree, leftChild1, rightChild1, leftChild21, rightChild21, leftChild22, rightChild22, leftChild3};
+
+        System.out.println("--------- Height of each node ----------------");
+        System.out.println("CORRECT");
+        //for(IntBinTree ibt : array) System.out.println(ibt.getData() + ": " + ibt.height());
+        System.out.println("-------- Max sum of each node ----------------");
+        //System.out.println("CORRECT");
+        for (IntBinTree2 ibt : array) System.out.println(ibt.getData() + ": " + ibt.maxSum());
+        System.out.println("-------- Max Path sum ----------------");
+        for (IntBinTree2 ibt : array) System.out.println(ibt.getData() + ": " + ibt.maxPath());
+        System.out.println("-------- Get all leafs ----------------");
+        System.out.println("CORRECT");
+        //for(IntBinTree ibt : array) System.out.println(ibt.getData() + ": " + Arrays.toString(ibt.getAllLeafs().toArray()));
+
+//        BuildBinTree<Integer> bbb = new BuildBinTree<>();
+//        bbb.printAll(tree);
+
+        //DotViewer.displayWindow(tree, "BinaryTree").setExitOnClose();
     }
 }

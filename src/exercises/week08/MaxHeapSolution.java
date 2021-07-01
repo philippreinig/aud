@@ -18,15 +18,16 @@ Testen Sie diese Methode, indem Sie aus den Buchstaben
 einen MaxHeap erzeugen.
 */
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class MaxHeapSolution<T extends Comparable<T>> {
 
-    private ArrayList<T> heap = new ArrayList<T>();
+    private final ArrayList<T> heap = new ArrayList<T>();
 
     public MaxHeapSolution() {
         heap.clear();
     }
+
     public MaxHeapSolution(T[] a) {
         heap.clear();
         for (int i = 0; i < a.length; i++) {
@@ -109,21 +110,21 @@ public class MaxHeapSolution<T extends Comparable<T>> {
     }
 
     public static void main(String[] args) {
-        String[] list = { "X", "T", "O", "G", "S", "M", "N", "A", "E", "R",
-                "A", "I" };
+        String[] list = {"X", "T", "O", "G", "S", "M", "N", "A", "E", "R",
+                "A", "I"};
 
         MaxHeapSolution<String> mh = new MaxHeapSolution<String>(list);
         MaxHeapSolution<String> mh2 = new MaxHeapSolution<String>();
 
-        System.out.println("maxHeap1: " + mh.toString() + "\nmaxHeap1.getSize() = " + mh.getSize());
+        System.out.println("maxHeap1: " + mh + "\nmaxHeap1.getSize() = " + mh.getSize());
         mh.insert("Z");
-        System.out.println("maxHeap1.insert(\"Z\"): "+ mh.toString() + "\nmaxHeap1.getSize() = " + mh.getSize());
+        System.out.println("maxHeap1.insert(\"Z\"): " + mh + "\nmaxHeap1.getSize() = " + mh.getSize());
         mh2.insert("Z");
-        System.out.println("maxHeap2: " + mh2.toString() + "\nmaxHeap2.getSize() = " + mh2.getSize() + "\n");
+        System.out.println("maxHeap2: " + mh2 + "\nmaxHeap2.getSize() = " + mh2.getSize() + "\n");
 
-        Integer[] intList = { 8, 3, 7, 1, 5, 6, 18, 9 };
+        Integer[] intList = {8, 3, 7, 1, 5, 6, 18, 9};
         MaxHeapSolution<Integer> intHeap = new MaxHeapSolution<>(intList);
-        System.out.println("maxHeap3: " + intHeap.toString());
+        System.out.println("maxHeap3: " + intHeap);
     }
 }
 

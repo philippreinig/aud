@@ -16,25 +16,6 @@ public class IntBinTree extends BinaryTree<Integer> {
     }
 
     //---------------------------------------------------------------//
-    public static void main(String[] args) {
-        IntBinTree rightChild21 = new IntBinTree(-11, null, null);
-        IntBinTree leftChild21 = new IntBinTree(6, null, null);
-        IntBinTree leftChild1 = new IntBinTree(4, leftChild21, rightChild21);
-        IntBinTree leftChild22 = new IntBinTree(5);
-        IntBinTree rightChild22 = new IntBinTree(7);
-        IntBinTree rightChild1 = new IntBinTree(1, leftChild22, rightChild22);
-        IntBinTree tree = new IntBinTree(-8, leftChild1, rightChild1);
-
-        for (BinaryTree<Integer> t : tree.inorder()) {
-            System.out.println(t.getData() + " height: " + ((IntBinTree) t).height());
-            System.out.println(t.getData() + " maxSum: " + ((IntBinTree) t).maxSum());
-            System.out.println(t.getData() + " maxPath: " + ((IntBinTree) t).maxPath());
-        }
-
-        DotViewer.displayWindow(tree.toDot(), "IntBinTree");
-    }
-
-    //---------------------------------------------------------------//
     public int height() {
         int heightLeft = this.getLeft() != null ? this.getLeft().height() : 0;
         int heightRight = this.getRight() != null ? this.getRight().height() : 0;
@@ -80,5 +61,24 @@ public class IntBinTree extends BinaryTree<Integer> {
     @Override
     public IntBinTree getLeft() {
         return (IntBinTree) super.getLeft();
+    }
+
+    //---------------------------------------------------------------//
+    public static void main(String[] args) {
+        IntBinTree rightChild21 = new IntBinTree(-11, null, null);
+        IntBinTree leftChild21 = new IntBinTree(6, null, null);
+        IntBinTree leftChild1 = new IntBinTree(4, leftChild21, rightChild21);
+        IntBinTree leftChild22 = new IntBinTree(5);
+        IntBinTree rightChild22 = new IntBinTree(7);
+        IntBinTree rightChild1 = new IntBinTree(1, leftChild22, rightChild22);
+        IntBinTree tree = new IntBinTree(-8, leftChild1, rightChild1);
+
+        for (BinaryTree<Integer> t : tree.inorder()) {
+            System.out.println(t.getData() + " height: " + ((IntBinTree) t).height());
+            System.out.println(t.getData() + " maxSum: " + ((IntBinTree) t).maxSum());
+            System.out.println(t.getData() + " maxPath: " + ((IntBinTree) t).maxPath());
+        }
+
+        DotViewer.displayWindow(tree.toDot(), "IntBinTree");
     }
 }

@@ -43,11 +43,11 @@ public class TraversalExample extends SingleStepper {
     public MyGraph graph() {
         return this.traversal != null ? this.traversal.graph() : null;
     }
-  
+
     @Override
     protected void onHalt() {
         if (this.graph() != null) {
-          this.viewer_.display(this.graph());
+            this.viewer_.display(this.graph());
         }
     }
 
@@ -66,26 +66,26 @@ public class TraversalExample extends SingleStepper {
 
         for (int i = 0; i < args.length; ++i) {
             if (args[i].compareTo("-g") == 0) {
-              graph = new File(args[++i]);
+                graph = new File(args[++i]);
             } else if (args[i].compareTo("-m") == 0) {
-              method = args[++i];
+                method = args[++i];
             } else if (args[i].compareTo("-s") == 0) {
-              start = args[++i];
+                start = args[++i];
             } else if (args[i].compareTo("-n") == 0) {
-              n = Integer.parseInt(args[++i]);
+                n = Integer.parseInt(args[++i]);
             } else if (args[i].compareTo("-v") == 0) {
-              verbose = Integer.parseInt(args[++i]);
+                verbose = Integer.parseInt(args[++i]);
             } else if (args[i].compareTo("-d") == 0) {
-              destination = args[++i];
+                destination = args[++i];
             } else {
-              usage();
+                usage();
             }
         }
 
         final TraversalExample app = new TraversalExample();
 
         if (graph == null) {
-          g = new GraphP88(method.compareTo("dfs") != 0 && method.compareTo("bfs") != 0);
+            g = new GraphP88(method.compareTo("dfs") != 0 && method.compareTo("bfs") != 0);
         } else {
             new GraphParser(g.getAbstractGraph()).parse(graph);
         }
@@ -93,23 +93,23 @@ public class TraversalExample extends SingleStepper {
         Traversal algorithm = null;
 
         if (method.compareTo("dfs") == 0) {
-          algorithm = new DepthFirstSearch(g);
+            algorithm = new DepthFirstSearch(g);
         } else if (method.compareTo("idfs1") == 0) {
-          algorithm = new IterativeDFS1(g);
+            algorithm = new IterativeDFS1(g);
         } else if (method.compareTo("idfs2") == 0) {
-          algorithm = new IterativeDFS2(g);
+            algorithm = new IterativeDFS2(g);
         } else if (method.compareTo("bfs") == 0) {
-          algorithm = new BreadthFirstSearch(g);
+            algorithm = new BreadthFirstSearch(g);
         } else if (method.compareTo("dijkstra") == 0) {
-          algorithm = new DijkstraShortestPaths(g);
+            algorithm = new DijkstraShortestPaths(g);
         } else if (method.compareTo("prim") == 0) {
-          algorithm = new PrimMinimumSpanningTree(g);
+            algorithm = new PrimMinimumSpanningTree(g);
         } else if (method.compareTo("astar") == 0) {
-          algorithm = new AStarShortestPath(g);
+            algorithm = new AStarShortestPath(g);
         }
 
         if (algorithm == null) {
-          usage();
+            usage();
         }
 
         algorithm.singlestepper = app;
@@ -123,34 +123,34 @@ public class TraversalExample extends SingleStepper {
 
         if (start != null) {
             for (final MyNode node : g) {
-              if (node.getLabel().compareTo(start) == 0) {
-                  s0 = node;
-                  break;
-              }
+                if (node.getLabel().compareTo(start) == 0) {
+                    s0 = node;
+                    break;
+                }
             }
             if (s0 == null) {
-              System.err.println("could not find start node s0='" + start + "'");
+                System.err.println("could not find start node s0='" + start + "'");
             }
         }
         if (destination != null) {
             for (final MyNode node : g) {
-              if (node.getLabel().compareTo(destination) == 0) {
-                  s1 = node;
-                  break;
-              }
+                if (node.getLabel().compareTo(destination) == 0) {
+                    s1 = node;
+                    break;
+                }
             }
             if (s1 == null) {
-              System.err.println("could not find destination node s1='" + destination + "'");
+                System.err.println("could not find destination node s1='" + destination + "'");
             }
         }
 
         if (s0 == null) {
-          s0 = app.graph().getSomeNode();
+            s0 = app.graph().getSomeNode();
         }
 
         if (method.compareTo("astar") == 0) {
             if (s1 == null) {
-              usage();
+                usage();
             }
 
             s1.color = "red"; // destination

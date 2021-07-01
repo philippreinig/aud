@@ -88,7 +88,7 @@ public class GraphAM<Node extends AbstractNode, Edge extends AbstractEdge>
 
     @Override
     public Iterator<Node> iterator() {
-        return (Iterator<Node>) this.nodes_.iterator();
+        return this.nodes_.iterator();
     }
 
     @Override

@@ -7,36 +7,39 @@ public class BinaryTreeAdHoc<T> extends BinaryTree<T> {
     public BinaryTreeAdHoc(T data) {
         super(data);
     }
-    public BinaryTreeAdHoc<T> getParent () {
+
+    public BinaryTreeAdHoc<T> getParent() {
         return (BinaryTreeAdHoc<T>) super.getParent();
     }
 
-    public BinaryTreeAdHoc<T> getLeft () {
+    public BinaryTreeAdHoc<T> getLeft() {
         return (BinaryTreeAdHoc<T>) super.getLeft();
     }
 
-    public BinaryTreeAdHoc<T> getRight () {
+    public BinaryTreeAdHoc<T> getRight() {
         return (BinaryTreeAdHoc<T>) super.getRight();
     }
 
-    public T getData () {
+    public T getData() {
         return super.getData();
     }
 
-    public int height(){
+    public int height() {
         int heightLeft = this.getLeft() != null ? this.getLeft().height() : 0;
         int heightRight = this.getRight() != null ? this.getRight().height() : 0;
         int maxHeight = Math.max(heightLeft, heightRight);
         return maxHeight + 1;
     }
 
-    public boolean isBalanced(){
+    public boolean isBalanced() {
         if (this.getLeft() == null && this.getRight() == null) return true;
         if (this.getLeft() == null && this.getRight() != null) return !(this.getRight().height() > 1);
         if (this.getLeft() != null && this.getRight() == null) return !(this.getLeft().height() > 1);
 
-        else return (this.getLeft().isBalanced()) && (this.getRight().isBalanced()) && (Math.abs(this.getLeft().height() - this.getRight().height()) <= 1);
+        else
+            return (this.getLeft().isBalanced()) && (this.getRight().isBalanced()) && (Math.abs(this.getLeft().height() - this.getRight().height()) <= 1);
     }
+
     public static void main(String[] args) {
         BinaryTreeAdHoc<Integer> root = new BinaryTreeAdHoc<>(0);
         BinaryTreeAdHoc<Integer> leftChild1 = new BinaryTreeAdHoc<>(1);

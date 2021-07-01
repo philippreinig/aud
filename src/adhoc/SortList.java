@@ -8,18 +8,6 @@ public class SortList<T extends Comparable<T>> {
     public SortList() {
     }
 
-    public static void main(String[] args) {
-        SortList<Integer> sl = new SortList<>();
-        sl.insert(2);
-        sl.insert(3);
-        sl.insert(1);
-        System.out.println(sl);
-        sl.insert(4);
-        sl.insert(0);
-        System.out.println(sl.insert(2));
-        System.out.println(sl);
-    }
-
     public boolean insert(T obj) {
         if (list.empty()) {
             list.push_front(obj);
@@ -43,6 +31,18 @@ public class SortList<T extends Comparable<T>> {
     @Override
     public String toString() {
         return list.toString();
+    }
+
+    public static void main(String[] args) {
+        SortList<Integer> sl = new SortList<>();
+        sl.insert(2);
+        sl.insert(3);
+        sl.insert(1);
+        System.out.println(sl);
+        sl.insert(4);
+        sl.insert(0);
+        System.out.println(sl.insert(2));
+        System.out.println(sl);
     }
 }
 

@@ -18,20 +18,6 @@ public class IntSList {
         li = new SList<>();
     }
 
-    // You must provide a main() method!
-    public static void main(String[] args) {
-        IntSList isl = new IntSList();
-        for (int i = 1; i <= 100; i++) {
-            isl.push_front(i);
-        }
-        IntSList filteredSList = isl.filter(x -> x % 2 == 1);
-        System.out.println("Whole list: " + isl);
-        System.out.println("Just even ints: " + isl.filter(x -> x % 2 == 0).toString());
-        System.out.println("Just uneven ints: " + isl.filter(x -> x % 2 == 1).toString());
-        System.out.println("All ints >= 50: " + isl.filter(x -> x >= 50).toString());
-        System.out.println("All ints <= 50: " + isl.filter(x -> x <= 50).toString());
-    }
-
     // delegate to SList
     @Override
     public String toString() {
@@ -58,5 +44,19 @@ public class IntSList {
         }
         if (p.test(nextInt)) newList.push_front(nextInt);
         return newList;
+    }
+
+    // You must provide a main() method!
+    public static void main(String[] args) {
+        IntSList isl = new IntSList();
+        for (int i = 1; i <= 100; i++) {
+            isl.push_front(i);
+        }
+        IntSList filteredSList = isl.filter(x -> x % 2 == 1);
+        System.out.println("Whole list: " + isl);
+        System.out.println("Just even ints: " + isl.filter(x -> x % 2 == 0).toString());
+        System.out.println("Just uneven ints: " + isl.filter(x -> x % 2 == 1).toString());
+        System.out.println("All ints >= 50: " + isl.filter(x -> x >= 50).toString());
+        System.out.println("All ints <= 50: " + isl.filter(x -> x <= 50).toString());
     }
 }

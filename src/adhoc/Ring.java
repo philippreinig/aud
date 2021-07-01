@@ -8,41 +8,6 @@ public class Ring {
 
     }
 
-    public static void main(String[] args) {
-        RNode head = new RNode(0, null, null);
-        RNode r1 = new RNode(1, null, null);
-        RNode r2 = new RNode(2, null, null);
-        RNode r3 = new RNode(3, null, null);
-        RNode r4 = new RNode(4, null, null);
-
-        head.prev = r4;
-        head.next = r1;
-        r1.prev = head;
-        r1.next = r2;
-        r2.prev = r1;
-        r2.next = r3;
-        r3.prev = r2;
-        r3.next = r4;
-        r4.prev = r3;
-        r4.next = head;
-
-        Ring ring = new Ring(head);
-
-        RNode find = ring.find(-1);
-
-        RNode insert = new RNode(-1, null, null);
-
-        ring.insertBefore(insert, r3);
-        System.out.println(head);
-        System.out.println(r1);
-        System.out.println(r2);
-        System.out.println(insert);
-        System.out.println(r3);
-        System.out.println(r4);
-        System.out.println(find == null);
-        //System.out.println(r3 == find);
-    }
-
     public void insertBefore(RNode n, RNode position) {
         RNode prevprev = position.prev;
         position.prev = n;
@@ -76,5 +41,40 @@ public class Ring {
         public String toString() {
             return this.data + ", " + this.prev.data + ", " + this.next.data;
         }
+    }
+
+    public static void main(String[] args) {
+        RNode head = new RNode(0, null, null);
+        RNode r1 = new RNode(1, null, null);
+        RNode r2 = new RNode(2, null, null);
+        RNode r3 = new RNode(3, null, null);
+        RNode r4 = new RNode(4, null, null);
+
+        head.prev = r4;
+        head.next = r1;
+        r1.prev = head;
+        r1.next = r2;
+        r2.prev = r1;
+        r2.next = r3;
+        r3.prev = r2;
+        r3.next = r4;
+        r4.prev = r3;
+        r4.next = head;
+
+        Ring ring = new Ring(head);
+
+        RNode find = ring.find(-1);
+
+        RNode insert = new RNode(-1, null, null);
+
+        ring.insertBefore(insert, r3);
+        System.out.println(head);
+        System.out.println(r1);
+        System.out.println(r2);
+        System.out.println(insert);
+        System.out.println(r3);
+        System.out.println(r4);
+        System.out.println(find == null);
+        //System.out.println(r3 == find);
     }
 }

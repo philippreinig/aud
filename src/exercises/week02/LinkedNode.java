@@ -9,6 +9,37 @@ public class LinkedNode<T> {
         this.nextNode = nextNode;
     }
 
+    public T getData() {
+        return this.data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public LinkedNode<T> getNextNode() {
+        return this.nextNode;
+    }
+
+    public void setNextNode(LinkedNode<T> nextNode) {
+        this.nextNode = nextNode;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        LinkedNode<T> nextNode = this;
+        while (nextNode.getNextNode() != null) {
+            sb.append(nextNode.getData().toString());
+            sb.append(", ");
+            nextNode = nextNode.getNextNode();
+        }
+        sb.append(nextNode.getData().toString());
+        sb.append("]");
+        return sb.toString();
+    }
+
     // You must provide a main() method!
     public static void main(String[] args) {
         LinkedNode<String> monday = new LinkedNode<>("monday", null);
@@ -41,36 +72,5 @@ public class LinkedNode<T> {
 //        System.out.println(ln2Data);
 //        System.out.println(ln1.toString());
 //        System.out.println(ln1.getNextNode().toString());
-    }
-
-    public T getData() {
-        return this.data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public LinkedNode<T> getNextNode() {
-        return this.nextNode;
-    }
-
-    public void setNextNode(LinkedNode<T> nextNode) {
-        this.nextNode = nextNode;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        LinkedNode<T> nextNode = this;
-        while (nextNode.getNextNode() != null) {
-            sb.append(nextNode.getData().toString());
-            sb.append(", ");
-            nextNode = nextNode.getNextNode();
-        }
-        sb.append(nextNode.getData().toString());
-        sb.append("]");
-        return sb.toString();
     }
 }

@@ -27,24 +27,6 @@ public class BinarySearchTree {
         else return Search(root.left, key);
     }
 
-    public static void main(String[] args) {
-        BinarySearchTree BST = new BinarySearchTree();
-        BST.Insert_Node(50);
-        BST.Insert_Node(40);
-        BST.Insert_Node(60);
-        BST.Insert_Node(30);
-        BST.Insert_Node(35);
-        BST.Insert_Node(55);
-        BST.InorderPrint();
-        System.out.println();
-        System.out.println(BST.SearcNode(77));
-        BST.FindMinimumNodeValue();
-        BST.PreorderPrint();
-        System.out.println();
-        BST.delete_node_data(30);
-        BST.PostorderPrint();
-    }
-
     public void Insert_Node(int data) {
         Node parrent = null;
         Node node = new Node(data);
@@ -130,5 +112,23 @@ public class BinarySearchTree {
             root.right = this.deleteRecord(root.right, root.data);
         }
         return root;
+    }
+
+    public static void main(String[] args) {
+        BinarySearchTree BST = new BinarySearchTree();
+        BST.Insert_Node(50);
+        BST.Insert_Node(40);
+        BST.Insert_Node(60);
+        BST.Insert_Node(30);
+        BST.Insert_Node(35);
+        BST.Insert_Node(55);
+        BST.InorderPrint();
+        System.out.println();
+        System.out.println(BST.SearcNode(77));
+        BST.FindMinimumNodeValue();
+        BST.PreorderPrint();
+        System.out.println();
+        BST.delete_node_data(30);
+        BST.PostorderPrint();
     }
 }

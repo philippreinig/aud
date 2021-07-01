@@ -10,17 +10,7 @@ public class MyBTree<Key extends Comparable<Key>> extends BTree<Key> {
         super(m);
     }
 
-    public int getHeight() {
-        KTreeNode<Key> node = this.root();
-        int height_counter = 0;
-        while (node != null) {
-            height_counter++;
-            node = node.getChild(0);
-        }
-        return height_counter;
-    }
-
-    private static void showExampleTree(){
+    private static void showExampleTree() {
         int m = 2;
         MyBTree<Integer> mbt = new MyBTree<>(m);
         SingleStepper ss = new SingleStepper("Single Stepper");
@@ -76,12 +66,22 @@ public class MyBTree<Key extends Comparable<Key>> extends BTree<Key> {
         System.out.println(mbt.getHeight());
     }
 
+    public int getHeight() {
+        KTreeNode<Key> node = this.root();
+        int height_counter = 0;
+        while (node != null) {
+            height_counter++;
+            node = node.getChild(0);
+        }
+        return height_counter;
+    }
+
     public static void main(String[] args) {
         int m = 1000;
         MyBTree<Integer> mbt = new MyBTree<>(m);
-       for (int i = 0; i < 1000000; i++){
-           mbt.insert(i);
-       }
+        for (int i = 0; i < 1000000; i++) {
+            mbt.insert(i);
+        }
         System.out.println(mbt.getHeight());
         //DotViewer.displayWindow(mbt, "MyBinaryTreeDisplay");
 

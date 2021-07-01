@@ -1,19 +1,19 @@
 package exercises.week05;
 
-import aud.example.expr.*;
 import aud.example.expr.Number;
+import aud.example.expr.*;
 import aud.util.DotViewer;
 
 public class ExampleExpression {
     public static void main(String[] args) {
         System.out.println("------ Expression Tree ------------");
         ExpressionTree et = new ExpressionTree(new Divide(),
-                                new ExpressionTree(new Plus(),
-                                    new ExpressionTree(new Number(1)),
-                                    new ExpressionTree(new Times(),
-                                            new ExpressionTree(new Number(5)),
-                                            new ExpressionTree(new Number(3)))),
-                            new ExpressionTree(new Number(2)));
+                new ExpressionTree(new Plus(),
+                        new ExpressionTree(new Number(1)),
+                        new ExpressionTree(new Times(),
+                                new ExpressionTree(new Number(5)),
+                                new ExpressionTree(new Number(3)))),
+                new ExpressionTree(new Number(2)));
 
         System.out.println(et.getValue());
         DotViewer.displayWindow(et.toDot(), et.toString());

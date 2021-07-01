@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="junit:junit:4.13" type="repository">
+    <properties maven-id="junit:junit:4.13">
+      <exclude>
+        <dependency maven-id="org.hamcrest:hamcrest-core" />
+      </exclude>
+    </properties>
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

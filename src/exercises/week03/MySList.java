@@ -14,14 +14,6 @@ public class MySList implements Iterable<Integer> {
         this.head = head;
     }
 
-    //----------------------------------------------------------------//
-    public static void main(String[] args) {
-        int[] intArray = {-42, 6, -43, 3, 41, -48, -7, -16, 42, -30, -21, 27, 17, -8, -3, -21, 15, 9, -30, 19, -39, -34, -41, -15, 28, 24, 22, -20, -23, 17, -19, 45, -14, -26, -30, 34, -9, -36, 35, 13};
-        MySList mysl = new MySList();
-        for (int element : intArray) mysl.push_back(element);
-        for (Integer integer : mysl) System.out.println(integer);
-    }
-
     public void sethead(Node head) {
         this.head = head;
     }
@@ -125,6 +117,14 @@ public class MySList implements Iterable<Integer> {
         public void remove() {
             throw new UnsupportedOperationException();
         }
+    }
+
+    //----------------------------------------------------------------//
+    public static void main(String[] args) {
+        int[] intArray = {-42, 6, -43, 3, 41, -48, -7, -16, 42, -30, -21, 27, 17, -8, -3, -21, 15, 9, -30, 19, -39, -34, -41, -15, 28, 24, 22, -20, -23, 17, -19, 45, -14, -26, -30, 34, -9, -36, 35, 13};
+        MySList mysl = new MySList();
+        for (int element : intArray) mysl.push_back(element);
+        for (Integer integer : mysl) System.out.println(integer);
     }
 
 }

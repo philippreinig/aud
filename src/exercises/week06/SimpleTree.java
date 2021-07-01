@@ -10,31 +10,6 @@ public class SimpleTree<T extends Comparable<T>> {
     }
 
     //---------------------------------------------------------------//
-    public static void main(String[] args) {
-        SimpleTree<Integer> tree = new SimpleTree<Integer>();
-        tree.add(4);
-        System.out.println(tree);
-        tree.add(2);
-        System.out.println(tree);
-        tree.add(4);
-        System.out.println(tree);
-        tree.add(6);
-        System.out.println(tree);
-        tree.add(10);
-        System.out.println(tree);
-        tree.add(12);
-        System.out.println(tree);
-        tree.add(7);
-        System.out.println(tree);
-
-        assert (tree.contains(4));
-        assert (tree.contains(6));
-        assert (tree.contains(7));
-        assert (!tree.contains(-1));
-        System.out.println("tree inorder: " + tree);
-    }
-
-    //---------------------------------------------------------------//
     public void add(T data) {
         if (root == null) root = new Node(data);
         else {
@@ -146,5 +121,30 @@ public class SimpleTree<T extends Comparable<T>> {
             str += node.right != null ? node.right.toString() : "";
             return str;
         }
+    }
+
+    //---------------------------------------------------------------//
+    public static void main(String[] args) {
+        SimpleTree<Integer> tree = new SimpleTree<Integer>();
+        tree.add(4);
+        System.out.println(tree);
+        tree.add(2);
+        System.out.println(tree);
+        tree.add(4);
+        System.out.println(tree);
+        tree.add(6);
+        System.out.println(tree);
+        tree.add(10);
+        System.out.println(tree);
+        tree.add(12);
+        System.out.println(tree);
+        tree.add(7);
+        System.out.println(tree);
+
+        assert (tree.contains(4));
+        assert (tree.contains(6));
+        assert (tree.contains(7));
+        assert (!tree.contains(-1));
+        System.out.println("tree inorder: " + tree);
     }
 }

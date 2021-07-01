@@ -23,12 +23,12 @@ public class SimpleNode extends AbstractNode {
      */
     @Override
     public void setLabel(final String label) {
-      this.label_ = label;
+        this.label_ = label;
     }
 
     @Override
     public void setPosition(final double x, final double y) {
-      this.position_ = new double[]{x, y};
+        this.position_ = new double[]{x, y};
     }
 
     /**

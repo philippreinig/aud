@@ -14,17 +14,6 @@ public class ForwardList<T> implements Iterable<T> {
     public ForwardList() {
     }
 
-    public static void main(String[] args) {
-        ForwardList<Integer> fw = new ForwardList<>();
-        fw.push_front(1);
-        fw.push_front(2);
-        fw.push_front(3);
-        fw.push_front(4);
-        fw.push_front(5);
-
-        for (Integer element : fw) System.out.println(element);
-    }
-
     @Override
     public String toString() {
         if (this.is_empty()) return "[]";
@@ -93,5 +82,16 @@ public class ForwardList<T> implements Iterable<T> {
             if (stack.is_empty()) throw new NoSuchElementException();
             return stack.pop();
         }
+    }
+
+    public static void main(String[] args) {
+        ForwardList<Integer> fw = new ForwardList<>();
+        fw.push_front(1);
+        fw.push_front(2);
+        fw.push_front(3);
+        fw.push_front(4);
+        fw.push_front(5);
+
+        for (Integer element : fw) System.out.println(element);
     }
 }

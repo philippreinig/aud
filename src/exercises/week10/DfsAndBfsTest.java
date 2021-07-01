@@ -52,10 +52,10 @@ public class DfsAndBfsTest {
 
         final JFrame dlg = new JFrame();
         final String[] options = new String[2];
-        options[0] = new String("Breadth-Search");
-        options[1] = new String("Depth-Search");
+        options[0] = "Breadth-Search";
+        options[1] = "Depth-Search";
         final int res = JOptionPane.showOptionDialog(dlg.getContentPane(),
-                "Select the desired algorithm:", "Graph Search", 0,
+                "Select the desired algorithm:", "Graph Search", JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE, null, options, null);
 
         Traversal algorithm = null;
