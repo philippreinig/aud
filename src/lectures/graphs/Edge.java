@@ -1,22 +1,28 @@
 package lectures.graphs;
 
-public class Edge {
+import aud.util.GraphvizDecorable;
+import aud.util.GraphvizDecorator;
+import aud.util.Graphvizable;
+
+public class Edge implements Graphvizable, GraphvizDecorable {
     private final Vertex<?> origin;
     private final Vertex<?> destination;
     private final double weight;
 
-    public Edge(Vertex<?> origin, Vertex<?> destination){
+    public Edge(final Vertex<?> origin, final Vertex<?> destination) {
         this(origin, destination, 1.0);
     }
 
-    public Edge(Vertex<?> origin, Vertex<?> destination, double weight){
-        if (origin == null && destination == null) throw new IllegalArgumentException();
+    public Edge(final Vertex<?> origin, final Vertex<?> destination, final double weight) {
+        if (origin == null && destination == null) {
+            throw new IllegalArgumentException();
+        }
         this.origin = origin;
         this.destination = destination;
         this.weight = weight;
     }
 
-    public Vertex<?> getDestination(){
+    public Vertex<?> getDestination() {
         return this.destination;
     }
 
@@ -24,7 +30,32 @@ public class Edge {
         return this.origin;
     }
 
-    public double getWeight(){
+    public String getLabel() {
+        final double w = this.getWeight();
+        if (w == Math.floor(w)) // missing proper printf, Java's formatting sucks!
+        {
+            return "" + ((int) this.getWeight());
+        } else {
+            return "" + w;
+        }
+    }
+
+    public double getWeight() {
         return this.weight;
+    }
+
+    @Override
+    public GraphvizDecorator getDecorator() {
+        return null;
+    }
+
+    @Override
+    public String toDot() {
+        return null;
+    }
+
+    @Override
+    public boolean equals(final Object other) {
+        return other instanceof Edge && (this.getOrigin().equals(((Edge) other).getOrigin())) && (this.getDestination().equals(((Edge) other).getDestination()));
     }
 }

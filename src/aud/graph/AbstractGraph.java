@@ -135,7 +135,7 @@ AbstractGraph<Node extends AbstractNode, Edge extends AbstractEdge>
     public Edge ensureEdge(final Node source, final Node destination) {
         final Edge edge = this.getEdge(source, destination);
         if (edge == null) {
-            throw new RuntimeException("no such edge " + source.index() +
+            throw new IllegalStateException("no such edge " + source.index() +
                     (this.isDirected() ? "->" : "--") +
                     destination.index());
         }

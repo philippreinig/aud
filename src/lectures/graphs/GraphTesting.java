@@ -1,19 +1,22 @@
 package lectures.graphs;
 
+import aud.util.DotViewer;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GraphTesting {
 
-    private static List<Vertex<Integer>> createNVertices(int n) {
-        ArrayList<Vertex<Integer>> vertices = new ArrayList<>();
+    private static List<Vertex<Integer>> createNVertices(final DirectedGraph<Integer> graph, final int n) {
+        final ArrayList<Vertex<Integer>> vertices = new ArrayList<>();
         for (int i = 1; i <= n; ++i) {
-            vertices.add(new Vertex<>(i));
+            vertices.add(new Vertex<>(graph, i));
         }
         return vertices;
     }
 
-    private static void printAdjacencyMatrix(List<List<Integer>> adjacencyMatrix) {
+    private static void printAdjacencyMatrix(final List<List<Integer>> adjacencyMatrix) {
         for (int i = 0; i < adjacencyMatrix.size(); ++i) {
             System.out.print("[");
             if (!adjacencyMatrix.isEmpty()) {
@@ -27,7 +30,7 @@ public class GraphTesting {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 //        DirectedGraph graph = new DirectedGraph();
 //        List<Vertex<Integer>> vertices = createNVertices(10);
 //        for (Vertex<Integer> vertex : vertices) graph.addNode(vertex);
@@ -40,8 +43,22 @@ public class GraphTesting {
 //        System.out.println(graph);
 //        printAdjacencyMatrix(graph.getAdjacencyMatrix());
 
-        DirectedGraph<Integer> graph = new DirectedGraph<>();
-        List<Vertex<Integer>> vertices = createNVertices(10);
+        final int amountVertices = 10;
+        final int weightRange = 100;
+        final Random rand = new Random();
+
+        final DirectedGraph<Integer> graph = new DirectedGraph<>();
+        final List<Vertex<Integer>> vertices = GraphTesting.createNVertices(graph, amountVertices);
+        for (final var vertex : vertices) {
+            graph.addNode(vertex);
+        }
+
+        for (int i = 0; i < 15; ++i) {
+            graph.addEdge(new Edge(vertices.get(rand.nextInt(graph.getAmountVertices())), vertices.get(rand.nextInt(graph.getAmountVertices())), rand.nextInt(weightRange)));
+        }
+        System.out.println(graph);
+
+        DotViewer.displayWindow(graph.toDot(), null);
 
     }
 

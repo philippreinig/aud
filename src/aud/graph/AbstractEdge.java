@@ -93,8 +93,6 @@ public abstract class AbstractEdge
                 return "" + w;
         } else
             return null;
-
-        //return hasWeight() ? ""+getWeight() : (String) null;
     }
 
     @Override

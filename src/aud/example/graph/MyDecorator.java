@@ -5,14 +5,14 @@ import aud.util.SimpleDecorator;
 
 public class MyDecorator extends SimpleDecorator {
 
-    MyGraph g_;
+    MyGraph g;
 
-    public MyDecorator(MyGraph g) {
-        g_ = g;
+    public MyDecorator(final MyGraph g) {
+        this.g = g;
     }
 
     @Override
-    public String getNodeDecoration(GraphvizDecorable object) {
+    public String getNodeDecoration(final GraphvizDecorable object) {
         String decoration = super.getNodeDecoration(object);
         if ((decoration == null || !decoration.contains("fillcolor=")) &&
                 ((MyNode) object).color != null) {
@@ -23,7 +23,7 @@ public class MyDecorator extends SimpleDecorator {
     }
 
     @Override
-    public String getEdgeDecoration(GraphvizDecorable object) {
+    public String getEdgeDecoration(final GraphvizDecorable object) {
         String decoration = super.getEdgeDecoration(object);
         if ((decoration == null || !decoration.contains("color=")) &&
                 ((MyEdge) object).color != null) {
