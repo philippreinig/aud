@@ -8,19 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class Vertex<T> implements Graphvizable, GraphvizDecorable {
+class Vertex<T> implements Graphvizable, GraphvizDecorable, Comparable<T> {
     private final ArrayList<Edge> outgoingEdges;
     private final T data;
-    private final DirectedGraph<T> graph;
+    private final Graph<T> graph;
 
     private final int index;
 
 
-    public Vertex(final DirectedGraph<T> graph, final T data) {
+    public Vertex(final Graph<T> graph, final T data) {
         this(graph, data, new ArrayList<>());
     }
 
-    public Vertex(final DirectedGraph<T> graph, final T data, final List<Edge> outgoingEdges) {
+    public Vertex(final Graph<T> graph, final T data, final List<Edge> outgoingEdges) {
         if (data == null) {
             throw new IllegalArgumentException("data may not be null!");
         }
@@ -33,7 +33,7 @@ class Vertex<T> implements Graphvizable, GraphvizDecorable {
         this.index = this.graph.getNextVertexIndex();
     }
 
-    public DirectedGraph<T> getGraph() {
+    public Graph<T> getGraph() {
         return this.graph;
     }
 
@@ -45,14 +45,7 @@ class Vertex<T> implements Graphvizable, GraphvizDecorable {
         return this.index;
     }
 
-    public void addOutgoingEdge(final Edge edge) {
-        if (edge == null) {
-            throw new IllegalArgumentException();
-        }
-        this.outgoingEdges.add(edge);
-    }
-
-    public boolean addEdge(final Edge edge) {
+    public boolean addOutgoingEdge(final Edge edge) {
         if (this.outgoingEdges.contains(edge)) {
             return false;
         }
@@ -91,8 +84,13 @@ class Vertex<T> implements Graphvizable, GraphvizDecorable {
     }
 
     @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public String toString() {
-        final var output = new StringBuilder("\u001B[36m" + this.data.toString() + "\u001B[0m");
+        final var output = new StringBuilder(this.data.toString());
         if (this.outgoingEdges.isEmpty()) {
             output.append("[]");
         } else {
@@ -118,5 +116,14 @@ class Vertex<T> implements Graphvizable, GraphvizDecorable {
     @Override
     public String toDot() {
         return null;
+    }
+
+    @Override
+    public int compareTo(final Object o) {
+        if (!(o instanceof Vertex)) {
+            throw new IllegalArgumentException();
+        } else {
+            return this.index - ((Vertex<?>) o).index;
+        }
     }
 }

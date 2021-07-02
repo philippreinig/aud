@@ -14,12 +14,13 @@ public class Edge implements Graphvizable, GraphvizDecorable {
     }
 
     public Edge(final Vertex<?> origin, final Vertex<?> destination, final double weight) {
-        if (origin == null && destination == null) {
+        if (origin == null || destination == null || origin.getGraph() != destination.getGraph()) {
             throw new IllegalArgumentException();
         }
         this.origin = origin;
         this.destination = destination;
         this.weight = weight;
+        this.origin.addOutgoingEdge(this);
     }
 
     public Vertex<?> getDestination() {
@@ -57,5 +58,10 @@ public class Edge implements Graphvizable, GraphvizDecorable {
     @Override
     public boolean equals(final Object other) {
         return other instanceof Edge && (this.getOrigin().equals(((Edge) other).getOrigin())) && (this.getDestination().equals(((Edge) other).getDestination()));
+    }
+
+    @Override
+    public String toString() {
+        return this.origin.getLabel() + " -> " + this.destination.getLabel();
     }
 }

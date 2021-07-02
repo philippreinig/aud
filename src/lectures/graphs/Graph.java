@@ -5,66 +5,70 @@ import aud.util.GraphvizDecorator;
 import aud.util.Graphvizable;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class DirectedGraph<T> implements Graphvizable, GraphvizDecorable {
+public class Graph<T> implements Graphvizable, GraphvizDecorable {
     private final ArrayList<Vertex<T>> vertices;
     private final ArrayList<Edge> edges;
 
+    private final boolean directed;
+
     private int nextVertexIndex = 0;
 
-    DirectedGraph() {
+    Graph(final boolean directed) {
         this.vertices = new ArrayList<>();
         this.edges = new ArrayList<>();
-//        this(new ArrayList<>(), new ArrayList<>());
+        this.directed = directed;
     }
 
-//    DirectedGraph(final ArrayList<Vertex<T>> nodes, final ArrayList<Edge> edges) {
-//        this.vertices = nodes;
-//        this.edges = edges;
-//    }
-
-    public boolean addNode(final Vertex<T> node) {
-        if (this.vertices.contains(node)) {
-            return false;
-        } else {
+    public void addNode(final Vertex<T> node) {
+        if (!this.vertices.contains(node)) {
             this.vertices.add(node);
-            return true;
         }
     }
 
-    public boolean removeNode(final Vertex<T> node) {
-        if (this.vertices.contains(node)) {
-            this.vertices.remove(node);
-            return true;
-        } else {
-            return false;
-        }
+    public void removeNode(final Vertex<T> node) {
+        this.vertices.remove(node);
     }
 
-    public boolean addEdge(final Edge edge) {
-        if (this.vertices.contains(edge.getOrigin()) && edge.getOrigin().hasNeighbour(edge.getDestination())) {
-            return false;
+    public List<Edge> getEdges() {
+        return this.edges;
+    }
+
+    public Edge[] getEdgesArray() {
+        return this.edges.toArray(Edge[]::new);
+    }
+
+    public void addEdge(final Edge edge) {
+        if (this.edges.contains(edge)) {
+            System.out.println("edge from " + edge.getOrigin() + " to " + edge.getDestination() + " already contained in graph.");
         } else {
             this.edges.add(edge);
-            return true;
+        }
+        final Edge reverseEdge = new Edge(edge.getDestination(), edge.getOrigin(), edge.getWeight());
+        final boolean containsReverseEdge = this.edges.contains(reverseEdge);
+        if (!this.directed && !containsReverseEdge) {
+            this.edges.add(reverseEdge);
         }
     }
 
-//    public List<List<T>> getAdjacencyMatrix() {
-//        List<List<T>> adjacencyMatrix = new ArrayList<>(this.vertices.size());
-//        for (int i = 0; i < this.vertices.size(); ++i) {
-//            adjacencyMatrix.add(new ArrayList<>(this.vertices.size()));
-//            for (int j = 0; j < this.vertices.size(); ++j) {
-//                adjacencyMatrix.get(i).add(0);
-//            }
-//        }
-//        for (int i = 0; i < this.vertices.size(); ++i) {
-//            for (int j = 0; j < this.vertices.size(); ++j) {
-//                if (this.vertices.get(i).hasNeighbour(new Vertex<>(j))) adjacencyMatrix.get(i).set(j, this.vertices.get(i).);
-//            }
-//        }
-//        return adjacencyMatrix;
-//    }
+    /**
+     * public List<List<T>> getAdjacencyMatrix() {
+     * List<List<T>> adjacencyMatrix = new ArrayList<>(this.vertices.size());
+     * for (int i = 0; i < this.vertices.size(); ++i) {
+     * adjacencyMatrix.add(new ArrayList<>(this.vertices.size()));
+     * for (int j = 0; j < this.vertices.size(); ++j) {
+     * adjacencyMatrix.get(i).add(0);
+     * }
+     * }
+     * for (int i = 0; i < this.vertices.size(); ++i) {
+     * for (int j = 0; j < this.vertices.size(); ++j) {
+     * if (this.vertices.get(i).hasNeighbour(new Vertex<>(j))) adjacencyMatrix.get(i).set(j, this.vertices.get(i).);
+     * }
+     * }
+     * return adjacencyMatrix;
+     * }
+     */
 
     @Override
     public String toString() {
@@ -93,6 +97,10 @@ public class DirectedGraph<T> implements Graphvizable, GraphvizDecorable {
         return this.vertices.size();
     }
 
+    public List<Vertex<T>> getVertices() {
+        return this.vertices;
+    }
+
     @Override
     public String toDot() {
         final String edgeSymbol = " -> ";
@@ -113,13 +121,6 @@ public class DirectedGraph<T> implements Graphvizable, GraphvizDecorable {
 
         for (final Vertex<T> node : this.vertices) {
             sb.append(" \"").append(node.getIndex()).append("\" [label=\"").append(node.getLabel()).append("\"];\n");
-//            decorator = node.getDecorator();
-//            dot.append((decorator != null) ? decorator.getFullNodeDecoration(node) : "shape=circle";
-
-//            final double[] p = node.getPosition();
-//            if (p != null) {
-//                dot.append(",pos=\"" + p[0] + "," + p[1] + "\",pin=true,";
-//            }
         }
 
         sb.append("\n");
@@ -129,13 +130,11 @@ public class DirectedGraph<T> implements Graphvizable, GraphvizDecorable {
             sb.append(" \"").append(edge.getOrigin().getIndex()).append("\"").append(edgeSymbol).append("\"").append(edge.getDestination().getIndex()).append("\" ");
             final String label = edge.getLabel();
             sb.append((label != null) ? "[label=\"" + label + "\""/*"," */ : "");
-//            sb.append("weight=").append(edge.getWeight());
             sb.append((decorator != null) ? decorator.getFullEdgeDecoration(edge) : "");
             sb.append("];\n");
         }
 
         sb.append("}");
-        System.out.println(sb);
         return sb.toString();
     }
 }

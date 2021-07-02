@@ -2,13 +2,11 @@ package lectures.graphs;
 
 import aud.util.DotViewer;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GraphTesting {
 
-    private static List<Vertex<Integer>> createNVertices(final DirectedGraph<Integer> graph, final int n) {
+    private static List<Vertex<Integer>> createNVertices(final Graph<Integer> graph, final int n) {
         final ArrayList<Vertex<Integer>> vertices = new ArrayList<>();
         for (int i = 1; i <= n; ++i) {
             vertices.add(new Vertex<>(graph, i));
@@ -27,7 +25,12 @@ public class GraphTesting {
             System.out.print(adjacencyMatrix.get(i).get(adjacencyMatrix.size() - 1).toString());
             System.out.println("]");
         }
+    }
 
+    private static void printMap(final Map<?, ?> map) {
+        for (final Map.Entry<?, ?> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 
     public static void main(final String[] args) {
@@ -47,7 +50,7 @@ public class GraphTesting {
         final int weightRange = 100;
         final Random rand = new Random();
 
-        final DirectedGraph<Integer> graph = new DirectedGraph<>();
+        final Graph<Integer> graph = new Graph<>(false);
         final List<Vertex<Integer>> vertices = GraphTesting.createNVertices(graph, amountVertices);
         for (final var vertex : vertices) {
             graph.addNode(vertex);
@@ -56,9 +59,15 @@ public class GraphTesting {
         for (int i = 0; i < 15; ++i) {
             graph.addEdge(new Edge(vertices.get(rand.nextInt(graph.getAmountVertices())), vertices.get(rand.nextInt(graph.getAmountVertices())), rand.nextInt(weightRange)));
         }
-        System.out.println(graph);
+        System.out.println(Arrays.toString(graph.getEdgesArray()));
 
         DotViewer.displayWindow(graph.toDot(), null);
+
+        final DijkstrasAlgorithm.DijkstrasAlgorithmResult dar = DijkstrasAlgorithm.runDijkstrasAlgorithm(graph, vertices.get(0));
+        System.out.println("shortest paths: ");
+        GraphTesting.printMap(dar.getShortestPathsPredecessorVertices());
+        System.out.println("shortest distances: ");
+        GraphTesting.printMap(dar.getShortestPathsDistances());
 
     }
 
