@@ -7,18 +7,15 @@ import aud.util.Graphvizable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Graph<T> implements Graphvizable, GraphvizDecorable {
+public class DirectedGraph<T> implements Graphvizable, GraphvizDecorable {
     private final ArrayList<Vertex<T>> vertices;
     private final ArrayList<Edge> edges;
 
-    private final boolean directed;
-
     private int nextVertexIndex = 0;
 
-    Graph(final boolean directed) {
+    public DirectedGraph() {
         this.vertices = new ArrayList<>();
         this.edges = new ArrayList<>();
-        this.directed = directed;
     }
 
     public void addNode(final Vertex<T> node) {
@@ -45,43 +42,42 @@ public class Graph<T> implements Graphvizable, GraphvizDecorable {
         } else {
             this.edges.add(edge);
         }
-        final Edge reverseEdge = new Edge(edge.getDestination(), edge.getOrigin(), edge.getWeight());
-        final boolean containsReverseEdge = this.edges.contains(reverseEdge);
-        if (!this.directed && !containsReverseEdge) {
-            this.edges.add(reverseEdge);
-        }
     }
 
-    /**
-     * public List<List<T>> getAdjacencyMatrix() {
-     * List<List<T>> adjacencyMatrix = new ArrayList<>(this.vertices.size());
-     * for (int i = 0; i < this.vertices.size(); ++i) {
-     * adjacencyMatrix.add(new ArrayList<>(this.vertices.size()));
-     * for (int j = 0; j < this.vertices.size(); ++j) {
-     * adjacencyMatrix.get(i).add(0);
-     * }
-     * }
-     * for (int i = 0; i < this.vertices.size(); ++i) {
-     * for (int j = 0; j < this.vertices.size(); ++j) {
-     * if (this.vertices.get(i).hasNeighbour(new Vertex<>(j))) adjacencyMatrix.get(i).set(j, this.vertices.get(i).);
-     * }
-     * }
-     * return adjacencyMatrix;
-     * }
-     */
+
+    public Double[][] getAdjacencyMatrix() {
+        final int n = this.vertices.size();
+        final Double[][] adjacencyMatrix = new Double[n][n];
+        for (int i = 0; i < adjacencyMatrix.length; ++i) {
+            for (int j = 0; j < adjacencyMatrix[i].length; ++j) {
+                adjacencyMatrix[i][j] = 0.0;
+            }
+        }
+        for (final Vertex<T> v : this.vertices) {
+            for (final Edge e : v.getOutgoingEdges()) {
+                adjacencyMatrix[v.getIndex()][e.getDestination().getIndex()] = e.getWeight();
+            }
+        }
+        return adjacencyMatrix;
+    }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("[");
-        if (this.vertices.isEmpty()) {
-            return sb.append("]").toString();
-        } else {
-            for (int i = 0; i < this.vertices.size() - 1; ++i) {
-                sb.append(this.vertices.get(i).toString()).append(", ");
+        final StringBuilder sb = new StringBuilder();
+        for (final Vertex<T> v : this.vertices) {
+            sb.append(v).append(": ");
+            final List<Edge> edgesOfV = v.getOutgoingEdges();
+            if (edgesOfV.isEmpty()) {
+                sb.append("\n");
+            } else {
+                for (int i = 0; i < edgesOfV.size() - 1; ++i) {
+                    sb.append(edgesOfV.get(i).getDestination()).append(", ");
+                }
+                sb.append(edgesOfV.get(edgesOfV.size() - 1).getDestination()).append("\n");
+
             }
-            sb.append(this.vertices.get(this.vertices.size() - 1).toString()).append("]");
-            return sb.toString();
         }
+        return sb.toString();
     }
 
     public int getNextVertexIndex() {

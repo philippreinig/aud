@@ -8,19 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class Vertex<T> implements Graphvizable, GraphvizDecorable, Comparable<T> {
+public class Vertex<T> implements Graphvizable, GraphvizDecorable, Comparable<T> {
     private final ArrayList<Edge> outgoingEdges;
     private final T data;
-    private final Graph<T> graph;
+    private final DirectedGraph<T> graph;
 
     private final int index;
 
 
-    public Vertex(final Graph<T> graph, final T data) {
+    public Vertex(final DirectedGraph<T> graph, final T data) {
         this(graph, data, new ArrayList<>());
     }
 
-    public Vertex(final Graph<T> graph, final T data, final List<Edge> outgoingEdges) {
+    public Vertex(final DirectedGraph<T> graph, final T data, final List<Edge> outgoingEdges) {
         if (data == null) {
             throw new IllegalArgumentException("data may not be null!");
         }
@@ -33,7 +33,7 @@ class Vertex<T> implements Graphvizable, GraphvizDecorable, Comparable<T> {
         this.index = this.graph.getNextVertexIndex();
     }
 
-    public Graph<T> getGraph() {
+    public DirectedGraph<T> getGraph() {
         return this.graph;
     }
 
@@ -90,18 +90,19 @@ class Vertex<T> implements Graphvizable, GraphvizDecorable, Comparable<T> {
 
     @Override
     public String toString() {
-        final var output = new StringBuilder(this.data.toString());
-        if (this.outgoingEdges.isEmpty()) {
-            output.append("[]");
-        } else {
-            output.append("[");
-            for (int i = 0; i < this.outgoingEdges.size() - 1; ++i) {
-                output.append(this.outgoingEdges.get(i).getDestination().getLabel()).append(", ");
-            }
-            output.append(this.outgoingEdges.get(this.outgoingEdges.size() - 1).getDestination().getLabel());
-            output.append("]");
-        }
-        return output.toString();
+        return this.getLabel();
+//        final var output = new StringBuilder(this.data.toString());
+//        if (this.outgoingEdges.isEmpty()) {
+//            output.append("[]");
+//        } else {
+//            output.append("[");
+//            for (int i = 0; i < this.outgoingEdges.size() - 1; ++i) {
+//                output.append(this.outgoingEdges.get(i).getDestination().getLabel()).append(", ");
+//            }
+//            output.append(this.outgoingEdges.get(this.outgoingEdges.size() - 1).getDestination().getLabel());
+//            output.append("]");
+//        }
+//        return output.toString();
     }
 
     public String getLabel() {

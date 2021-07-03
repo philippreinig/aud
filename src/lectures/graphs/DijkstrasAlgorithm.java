@@ -1,5 +1,6 @@
 package lectures.graphs;
 
+
 import aud.PriorityQueue;
 
 import java.util.HashMap;
@@ -14,35 +15,41 @@ public class DijkstrasAlgorithm {
     private DijkstrasAlgorithm() {
     }
 
-    public static DijkstrasAlgorithmResult runDijkstrasAlgorithm(final Graph<?> graph, final Vertex<?> startNode) {
+    public static DijkstrasAlgorithmResult runDijkstrasAlgorithm(final DirectedGraph<?> graph, final Vertex<?> start) {
         if (DijkstrasAlgorithm.VERBOSE) {
-            System.out.println("running Dijkstra's algorithm for " + graph + " with start node " + startNode);
+            System.out.println("running Dijkstra's algorithm for " + graph + " with start node " + start);
         }
-        final HashMap<Vertex<?>, Double> shortestPathsDistances = new HashMap<>();
-        final HashMap<Vertex<?>, Vertex<?>> shortestPathsPredecessorVertices = new HashMap<>();
-        for (final Vertex<?> vertex : graph.getVertices()) {
-            shortestPathsDistances.put(vertex, Double.POSITIVE_INFINITY);
-            shortestPathsPredecessorVertices.put(vertex, null);
+        final HashMap<Vertex<?>, Double> d = new HashMap<>();                       // d = (shortest) distance
+        final HashMap<Vertex<?>, Vertex<?>> p = new HashMap<>();                    // p = predecessor node for shortest path
+        for (final Vertex<?> v : graph.getVertices()) {
+            d.put(v, Double.POSITIVE_INFINITY);
+            p.put(v, null);
         }
-        shortestPathsDistances.put(startNode, 0.0);
-        final PriorityQueue<Vertex<?>> priorityQueue = new PriorityQueue<>();
-        for (final Vertex<?> vertex : graph.getVertices()) {
-            priorityQueue.push(vertex);
+        d.put(start, 0.0);
+        final PriorityQueue<Vertex<?>> pq = new PriorityQueue<>((o1, o2) -> (int) (d.get(o1) - d.get(o2)));
+        for (final Vertex<?> v : graph.getVertices()) {
+            pq.push(v);
         }
-        while (!priorityQueue.is_empty()) {
-            final Vertex<?> vertex = priorityQueue.pop();
-            for (final Edge edge : vertex.getOutgoingEdges()) {
-                final double check_distance = shortestPathsDistances.get(vertex) + edge.getWeight();
-                if (check_distance < shortestPathsDistances.get(edge.getDestination())) {
-                    shortestPathsDistances.put(edge.getDestination(), check_distance);
-                    shortestPathsPredecessorVertices.put(edge.getDestination(), vertex);
+        while (!pq.is_empty()) {
+            if (DijkstrasAlgorithm.VERBOSE) {
+                System.out.println(pq);
+                System.out.println(d);
+            }
+            final Vertex<?> v = pq.pop();
+            assert v != null;
+            for (final Edge edge : v.getOutgoingEdges()) {
+                final double new_d = d.get(v) + edge.getWeight();
+                if (pq.contains(edge.getDestination()) && new_d < d.get(edge.getDestination())) {
+                    d.put(edge.getDestination(), new_d);
+                    p.put(edge.getDestination(), v);
+                    pq.lower(edge.getDestination());
                 }
             }
         }
-        return new DijkstrasAlgorithmResult(shortestPathsDistances, shortestPathsPredecessorVertices);
+        return new DijkstrasAlgorithmResult(d, p);
     }
 
-    static class DijkstrasAlgorithmResult {
+    public static class DijkstrasAlgorithmResult {
         private final HashMap<Vertex<?>, Vertex<?>> shortestPathsPredecessorVertices;
         private final HashMap<Vertex<?>, Double> shortestPathsDistances;
 
@@ -58,6 +65,5 @@ public class DijkstrasAlgorithm {
         public Map<Vertex<?>, Double> getShortestPathsDistances() {
             return this.shortestPathsDistances;
         }
-
     }
 }
