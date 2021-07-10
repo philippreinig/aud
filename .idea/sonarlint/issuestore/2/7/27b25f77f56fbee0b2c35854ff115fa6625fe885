@@ -1,35 +1,0 @@
-
-3
-java:S1643ø"Use a StringBuilder instead.(›Œğ
-8
-java:S1643ü"Use a StringBuilder instead.(…¡—ãøÿÿÿÿ
-3
-java:S1643š"Use a StringBuilder instead.(êšıÙ
-8
-java:S1643›"Use a StringBuilder instead.(Ñß§şÿÿÿÿ
-2
-java:S1643Ÿ"Use a StringBuilder instead.(ÀÖŸ$
-8
-java:S1643¢"Use a StringBuilder instead.(ÅÁ‹ıüÿÿÿÿ
-3
-java:S1643©"Use a StringBuilder instead.(Âíş×
-8
-java:S1643¬"Use a StringBuilder instead.(İáÎùÿÿÿÿ
-8
-java:S1643­"Use a StringBuilder instead.( ıŠºıÿÿÿÿ
-8
-java:S1643®"Use a StringBuilder instead.(Ğâ÷Çşÿÿÿÿ
-2
-java:S1643¯"Use a StringBuilder instead.(Öï±^
-8
-java:S1643°"Use a StringBuilder instead.(ÅÁ‹ıüÿÿÿÿ
-T
-java:S5993/"9Change the visibility of this constructor to "protected".(½àİüúÿÿÿÿ
-n	java:S116"YRename this field "nodeGenerator_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÌ²À
-s	java:S116"YRename this field "edgeGenerator_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è‡¹íüÿÿÿÿ
-c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ÇÏÊ—ıÿÿÿÿ
-c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ÇÏÊ—ıÿÿÿÿ
-n
-java:S3776‡"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(¹ıßÙÿÿÿÿÿ
-R	java:S125´"<This block of commented-out lines of code should be removed.(¼–šØ
-l	java:S116¾"QRename this field "graph_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·È–½ıÿÿÿÿ
