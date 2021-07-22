@@ -1,140 +1,116 @@
 package aud.graph;
 
 import aud.Vector;
-
 import java.util.Iterator;
 import java.util.TreeSet;
 
-/**
- * Graph implementation based on adjacency matrix.<p>
- * <p>
- * The implementation uses a sparse {@link AdjacencyMatrix}
- *
- * @see AdjacencyMatrix
+/** Graph implementation based on adjacency matrix.<p>
+
+    The implementation uses a sparse {@link AdjacencyMatrix}
+
+    @see AdjacencyMatrix
  */
-public class GraphAM<Node extends AbstractNode, Edge extends AbstractEdge>
-        extends AbstractGraph<Node, Edge>
-        implements Iterable<Node> {
+public class GraphAM<Node extends AbstractNode,Edge extends AbstractEdge>
+  extends AbstractGraph<Node,Edge>
+  implements Iterable<Node> {
 
-    AdjacencyMatrix<Edge> adj_;
-    TreeSet<Node> nodes_;
+  AdjacencyMatrix<Edge> adj_         = null;
+  TreeSet<Node>       nodes_         = null;
 
-    /**
-     * Create graph.
-     *
-     * @param nodeGenerator same as for {@link AbstractGraph#AbstractGraph}
-     * @param edgeGenerator same as for {@link AbstractGraph#AbstractGraph}
-     * @param directed      {@code true} for creating a directed graph,
-     *                      {@code false} for an undirected graph
-     *                      (<em>symmetric</em> {@link AdjacencyMatrix})
-     */
-    public GraphAM(final Node nodeGenerator, final Edge edgeGenerator, final boolean directed) {
-        super(nodeGenerator, edgeGenerator);
+  /** Create graph.
+      @param nodeGenerator same as for {@link AbstractGraph#AbstractGraph}
+      @param edgeGenerator same as for {@link AbstractGraph#AbstractGraph}
+      @param directed {@code true} for creating a directed graph,
+      {@code false} for an undirected graph
+      (<em>symmetric</em> {@link AdjacencyMatrix})
+   */
+  public GraphAM(Node nodeGenerator,Edge edgeGenerator,
+		 boolean directed) {
+    super(nodeGenerator,edgeGenerator);
 
-        this.adj_ = new AdjacencyMatrix<Edge>(!directed);
-        this.nodes_ = new TreeSet<Node>();
+    adj_=new AdjacencyMatrix<Edge>(!directed);
+    nodes_=new TreeSet<Node>();
+  }
+
+  @Override public boolean isDirected() {
+    return !adj_.isSymmetricMatrix();
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override public Node addNode() {
+    Node node=(Node) nodeGenerator_.create();
+    node.graph_=this;
+    node.index_=nodes_.size();
+    nodes_.add(node);
+    return node;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override public Edge addEdge(Node source,Node destination) {
+    Edge edge=getEdge(check(source),check(destination));
+
+    if (edge!=null)
+      throw new RuntimeException("edge "+source.index()+
+				 (isDirected() ? "->" : "--")+
+				 destination.index()+" exists");
+
+    edge=(Edge) edgeGenerator_.create();
+    edge.graph_=this;
+    if (!isDirected() && source.index_>destination.index_)   {
+      edge.dst_=source;
+      edge.src_=destination;
+    }
+    else {
+      edge.src_=source;
+      edge.dst_=destination;
     }
 
-    @Override
-    public boolean isDirected() {
-        return !this.adj_.isSymmetricMatrix();
-    }
+    adj_.set(source.index_,destination.index_,edge);
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public Node addNode() {
-        final Node node = (Node) this.nodeGenerator_.create();
-        node.graph_ = this;
-        node.index_ = this.nodes_.size();
-        this.nodes_.add(node);
-        return node;
-    }
+    return edge;
+  }
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public Edge addEdge(final Node source, final Node destination) {
-        Edge edge = this.getEdge(this.check(source), this.check(destination));
+  @Override public int getNumNodes() { return nodes_.size(); }
+  @Override public Node getSomeNode() { return nodes_.first(); }
 
-        if (edge != null) {
-            throw new RuntimeException("edge " + source.index() +
-                    (this.isDirected() ? "->" : "--") +
-                    destination.index() + " exists");
-        }
+  @Override public Iterator<Node> iterator() {
+    return (Iterator<Node>) nodes_.iterator();
+  }
 
-        edge = (Edge) this.edgeGenerator_.create();
-        edge.graph_ = this;
-        if (!this.isDirected() && source.index_ > destination.index_) {
-            edge.dst_ = source;
-            edge.src_ = destination;
-        } else {
-            edge.src_ = source;
-            edge.dst_ = destination;
-        }
+  @Override public Edge getEdge(Node source,Node destination) {
+    return adj_.get(source.index_,destination.index_);
+  }
 
-        this.adj_.set(source.index_, destination.index_, edge);
+  @Override protected Node check(Node node) {
+    super.check(node); // additional assertion
+    assert(nodes_.contains(node));
+    return node;
+  }
+  @Override protected Edge check(Edge edge) {
+    super.check(edge);  // additional assertion
+    assert(adj_.get(edge.src_.index_,edge.dst_.index_)==edge);
+    return edge;
+  }
 
-        return edge;
-    }
+  @Override public Vector<Edge> getInEdges(Node node) {
+    return adj_.getColumnEntries(check(node).index_);
+  }
+  @Override public Vector<Edge> getOutEdges(Node node) {
+    return adj_.getRowEntries(check(node).index_);
+  }
 
-    @Override
-    public int getNumNodes() {
-        return this.nodes_.size();
-    }
+  @Override public void removeNode(Node node) {
+    adj_.clearColumnAndRow(check(node).index_);
+    boolean removed=nodes_.remove(node);
+    assert(removed);
+  }
 
-    @Override
-    public Node getSomeNode() {
-        return this.nodes_.first();
-    }
+  @Override public void removeEdge(Edge edge) {
+    check(edge);
+    adj_.set(edge.src_.index_,edge.dst_.index_,null);
+  }
 
-    @Override
-    public Iterator<Node> iterator() {
-        return this.nodes_.iterator();
-    }
-
-    @Override
-    public Edge getEdge(final Node source, final Node destination) {
-        return this.adj_.get(source.index_, destination.index_);
-    }
-
-    @Override
-    protected Node check(final Node node) {
-        super.check(node); // additional assertion
-        assert (this.nodes_.contains(node));
-        return node;
-    }
-
-    @Override
-    protected Edge check(final Edge edge) {
-        super.check(edge);  // additional assertion
-        assert (this.adj_.get(edge.src_.index_, edge.dst_.index_) == edge);
-        return edge;
-    }
-
-    @Override
-    public Vector<Edge> getInEdges(final Node node) {
-        return this.adj_.getColumnEntries(this.check(node).index_);
-    }
-
-    @Override
-    public Vector<Edge> getOutEdges(final Node node) {
-        return this.adj_.getRowEntries(this.check(node).index_);
-    }
-
-    @Override
-    public void removeNode(final Node node) {
-        this.adj_.clearColumnAndRow(this.check(node).index_);
-        final boolean removed = this.nodes_.remove(node);
-        assert (removed);
-    }
-
-    @Override
-    public void removeEdge(final Edge edge) {
-        this.check(edge);
-        this.adj_.set(edge.src_.index_, edge.dst_.index_, null);
-    }
-
-    @Override
-    public Iterator<Edge> getEdgeIterator() {
-        return this.adj_.iterator();
-    }
+  @Override public Iterator<Edge> getEdgeIterator() {
+    return adj_.iterator();
+  }
 }

@@ -1,4 +1,3 @@
-/**
- * Dynamic Programming examples
+/** Dynamic Programming examples
  */
 package aud.example.dp;

@@ -1,102 +1,96 @@
 package aud.example.graph;
 
+import java.util.Comparator;
 import aud.PriorityQueue;
 
-import java.util.Comparator;
-
-/**
- * Priority first search implementation. The {@link #priority} function
- * must be implemented (e.g., Dijkstra, Prim}.
- */
+/** Priority first search implementation. The {@link #priority} function
+    must be implemented (e.g., Dijkstra, Prim}.
+  */
 public abstract class PriorityFirstSearch extends Traversal {
 
-    /**
-     * comparator for {#link aud.PriorityQueue}
-     */
-    protected Comparator<MyNode> compareNodes =
-            new Comparator<MyNode>() {
-                @Override
-                public int compare(MyNode a, MyNode b) {
-                    double d = a.d - b.d;
-                    return (d < 0.0) ? -1 : (d > 0.0 ? +1 : 0);
-                }
-            };
-
-    public PriorityFirstSearch(MyGraph g) {
-        super(g);
+  /** comparator for {#link aud.PriorityQueue} */
+  protected Comparator<MyNode> compareNodes =
+    new Comparator<MyNode>() {
+    @Override public int compare(MyNode a,MyNode b) {
+      double d=a.d-b.d ;
+      return (d<0.0) ? -1 : (d>0.0 ? +1 : 0);
     }
+  };
 
-    /**
-     * Compute priority of a node:
-     * <ul>
-     * <li>{@code node.d+e.getWeight()} for Dijkstra's algorithm to
-     * find <b>shortest paths</b> (and the shortest path tree)</li>
-     * <li>{@code e.getWeight()} for Prim's algorithm to
-     * find the <b>minimum spanning tree</b></li>
-     * </ul>
-     */
-    protected abstract double priority(MyNode node, MyEdge e);
+  public PriorityFirstSearch(MyGraph g) {
+    super(g);
+  }
 
-    @Override
-    public void start(MyNode s0) {
-        initialize(); // reset all node attributes
+  /** Compute priority of a node:
+      <ul>
+      <li>{@code node.d+e.getWeight()} for Dijkstra's algorithm to
+      find <b>shortest paths</b> (and the shortest path tree)</li>
+      <li>{@code e.getWeight()} for Prim's algorithm to
+      find the <b>minimum spanning tree</b></li>
+      </ul>
+    */
+  protected abstract double priority(MyNode node,MyEdge e);
 
-        int count = 0;
-        PriorityQueue<MyNode> open =
-                new PriorityQueue<MyNode>(g_.getNumNodes(), compareNodes);
-        s0.d = 0.0;
+  @Override public void start(MyNode s0) {
+    initialize(); // reset all node attributes
 
-        showMark(s0);
+    int count=0;
+    PriorityQueue<MyNode> open=
+      new PriorityQueue<MyNode>(g_.getNumNodes(),compareNodes);
+    s0.d=0.0;
 
-        open.push(s0);
+    showMark(s0);
 
-        while (!open.is_empty()) {
-            if (verbose > 0)
-                System.out.println("open=" + open);
+    open.push(s0);
 
-            MyNode s = open.pop();
+    while (!open.is_empty()) {
+      if (verbose>0)
+        System.out.println("open="+open.toString());
 
-            assert (!Double.isInfinite(s.d));
-            showVisit(s);
+      MyNode s=open.pop();
 
-            for (MyEdge e : g_.getOutEdges(s)) {
+      assert(!Double.isInfinite(s.d));
+      showVisit(s);
 
-                if (verbose > 0)
-                    System.err.println(e);
+      for (MyEdge e : g_.getOutEdges(s)) {
 
-                MyNode t = (MyNode) e.destination();
-                if (t == s)
-                    t = (MyNode) e.source();          // undirected graph
+        if (verbose>0)
+          System.err.println(e);
 
-                double pr = priority(s, e);
+        MyNode t=(MyNode) e.destination();
+        if (t==s)
+            t=(MyNode) e.source();          // undirected graph
 
-                if (Double.isInfinite(t.d)) {
+        double pr=priority(s,e);
 
-                    assert (!open.contains(t));
+        if (Double.isInfinite(t.d)) {
 
-                    t.ord = count++;
-                    t.p = s;
-                    t.d = pr;
+          assert(!open.contains(t));
 
-                    showMark(t);
+          t.ord=count++;
+          t.p=s;
+          t.d=pr;
 
-                    open.push(t);
-                } else if (t.d > pr && open.contains(t)) {   // update distance/priority
+          showMark(t);
 
-                    if (verbose > 0)
-                        System.out.println("update " + t + ": priority " + t.d + " -> " + pr +
-                                ", parent " + t.p + " -> " + s);
-
-                    t.p = s;
-                    t.d = pr;
-
-                    open.lower(t);
-
-                    if (verbose > 0)
-                        System.out.println("open=" + open);
-                }
-            }
+          open.push(t);
         }
+        else if (t.d>pr && open.contains(t)) {   // update distance/priority
+
+          if (verbose>0)
+            System.out.println("update "+t+": priority "+t.d+" -> "+pr+
+                 ", parent "+t.p+" -> "+s);
+
+          t.p=s;
+          t.d=pr;
+
+          open.lower(t);
+
+          if (verbose>0)
+            System.out.println("open="+open.toString());
+        }
+      }
     }
+  }
 
 }
