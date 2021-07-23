@@ -1,28 +1,36 @@
 package examprep;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 
 public class Ring<T> implements Iterable<Ring.RNode<T>> {
-    RNode<T> head;
-    RNode<T> tail;
+    private final boolean check = false;
+    private RNode<T> head;
+    private RNode<T> tail;
 
-    public void remove(final RNode<T> element) {
-        if (this.isEmpty()) {
-            return;
-        } else {
-            RNode<T> next = this.head;
-            if (next == element) {
-                return next;
-            }
-            while ( next.next != this.head;){
-
-            }
+    public void remove(final RNode<T> node) {
+        if (node.next == null || node.prev == null) {
+            throw new IllegalArgumentException(node + " contains invalid references to prev or next -> cant perform remove operation");
         }
-
-
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        node.prev = null;
+        node.next = null;
+        System.err.println("remove:" + this + " does not contain " + node);
     }
 
-    public void remove(final int i) {
+    public void remove(final int x) {
+        try {
+            final var iter = this.iterator();
+            for (int i = 0; i < x; ++i) {
+                iter.next();
+            }
+            this.remove(iter.next());
+        } catch (final NoSuchElementException nsee) {
+            throw new IndexOutOfBoundsException(x);
+        }
+
 
     }
 
@@ -60,6 +68,9 @@ public class Ring<T> implements Iterable<Ring.RNode<T>> {
     }
 
     public void insertAfter(final RNode<T> ref, final T data) {
+        if (ref == null) {
+
+        }
 
     }
 
@@ -68,15 +79,25 @@ public class Ring<T> implements Iterable<Ring.RNode<T>> {
     }
 
     public RNode<T> find(final T data) {
-        final RNode<T> next = this.head;
-        if (next != null) {
-            while (next.next != this.head) {
-                if (next.data.equals(data)) {
-                    return next;
-                }
+        if (data == null) {
+            throw new IllegalArgumentException();
+        }
+        for (final RNode<T> node : this) {
+            if (node.data.equals(data)) {
+                return node;
             }
         }
-        return null;
+        throw new NoSuchElementException();
+
+//        final RNode<T> next = this.head;
+//        if (next != null) {
+//            while (next.next != this.head) {
+//                if (next.data.equals(data)) {
+//                    return next;
+//                }
+//            }
+//        }
+//        return null;
     }
 
     public boolean isEmpty() {
@@ -95,6 +116,9 @@ public class Ring<T> implements Iterable<Ring.RNode<T>> {
 
             @Override
             public RNode<T> next() {
+                if (!this.hasNext()) {
+                    throw new NoSuchElementException();
+                }
                 return (this.next = this.next.next).prev;
             }
         };
@@ -110,6 +134,9 @@ public class Ring<T> implements Iterable<Ring.RNode<T>> {
         }
 
         RNode(final T data, final RNode<T> prev, final RNode<T> next) {
+            if (data == null) {
+                throw new IllegalArgumentException();
+            }
             this.data = data;
             this.prev = prev;
             this.next = next;
