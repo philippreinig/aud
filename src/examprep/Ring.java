@@ -20,10 +20,10 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
     Ring() {
         if (Ring.VISUAL_DEBUG) {
 
-            final JFrame dv_frame = new JFrame();
-            this.dv = new DotViewer(dv_frame);
-            dv_frame.pack();
-            dv_frame.setVisible(true);
+            final JFrame frame = new JFrame();
+            this.dv = new DotViewer(frame);
+            frame.pack();
+            frame.setVisible(true);
             this.ss = new SingleStepper("Single Stepper");
         }
     }
@@ -85,9 +85,16 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
             if (Ring.VISUAL_DEBUG) {
                 this.show();
             }
-
         }
+    }
 
+    public RNode<T> get(final int x) {
+        final Iterator<RNode<T>> iter = this.iterator();
+        RNode<T> curr = iter.next();
+        for (int i = 1; i <= x; ++i) {
+            curr = iter.next();
+        }
+        return curr;
     }
 
     public void insertBack(final T data) {
@@ -140,16 +147,6 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
             }
         }
         throw new NoSuchElementException();
-
-//        final RNode<T> next = this.head;
-//        if (next != null) {
-//            while (next.next != this.head) {
-//                if (next.data.equals(data)) {
-//                    return next;
-//                }
-//            }
-//        }
-//        return null;
     }
 
     public boolean isEmpty() {
@@ -180,7 +177,7 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
                     hasNext = !this.tailReached;
 
                 } else {
-                    hasNext = this.next != Ring.this.tail || this.tailReached;
+                    hasNext = !this.tailReached || this.next == Ring.this.tail;
                 }
                 return hasNext;
             }
@@ -205,22 +202,24 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
         final String ARROW_NEXT = " -> ";
         final String LABEL_PREV = " [label=\"prev\"]";
         final String LABEL_NEXT = " [label=\"next\"]";
-        String dotStr;
+        final StringBuilder dotStr;
         if (this.isEmpty()) {
-            dotStr = "digraph Ring{\"null\"}";
+            dotStr = new StringBuilder("digraph Ring{\"null\"}");
         } else {
-            dotStr = "digraph Ring {\n";
+            dotStr = new StringBuilder("digraph Ring {\n");
             for (final RNode<T> node : this) {
                 final String prvStr = node.prev.data.toString();
                 final String nxtStr = node.next.data.toString();
                 final String nodeStr = node.data.toString();
-                dotStr += "\"" + nodeStr + "\"" + ARROW_PREV + "\"" + prvStr + "\"" + LABEL_PREV + ";\n"
-                        + "\"" + nodeStr + "\"" + ARROW_NEXT + "\"" + nxtStr + "\"" + LABEL_NEXT + ";\n";
+                dotStr.append("\"").append(nodeStr).append("\"").append(ARROW_PREV)
+                        .append("\"").append(prvStr).append("\"").append(LABEL_PREV)
+                        .append(";\n").append("\"").append(nodeStr).append("\"").append(ARROW_NEXT)
+                        .append("\"").append(nxtStr).append("\"").append(LABEL_NEXT).append(";\n");
             }
-            dotStr += "}";
+            dotStr.append("}");
         }
         System.out.println(dotStr);
-        return dotStr;
+        return dotStr.toString();
     }
 
     public void show() {
@@ -233,8 +232,9 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
     @Override
     public String toString() {
         final StringBuilder ringStr = new StringBuilder();
+        ringStr.append(" | ");
         for (final RNode<T> node : this) {
-            ringStr.append(node.toString()).append("\n");
+            ringStr.append(node.data.toString()).append(" | ");
         }
         return ringStr.toString();
     }
@@ -255,6 +255,10 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
             this.data = data;
             this.prev = prev;
             this.next = next;
+        }
+
+        public String toStringShort() {
+            return "(" + this.data.toString() + ")";
         }
 
         @Override

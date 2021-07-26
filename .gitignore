@@ -3,5 +3,5 @@
 .#\*
 \#*#
 out/
-.idea/workspace.xml
-.idea/sonarlint/
+.idea/
+*.iml
