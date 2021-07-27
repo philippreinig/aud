@@ -1,4 +1,4 @@
-package examprep.doublylinkedring;
+package examprep.altklausur2012.doublylinkedring;
 
 import aud.util.DotViewer;
 
