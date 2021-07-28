@@ -1,4 +1,4 @@
-package examprep.binarytreemaxlevel;
+package examprep.altklausur2012.binarytreemaxlevel;
 
 import aud.BinaryTree;
 import aud.Stack;

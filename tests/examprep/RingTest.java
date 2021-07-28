@@ -1,7 +1,7 @@
 package examprep;
 
-import examprep.doublylinkedring.IntRing;
-import examprep.doublylinkedring.Ring;
+import examprep.altklausur2012.doublylinkedring.IntRing;
+import examprep.altklausur2012.doublylinkedring.Ring;
 import org.junit.Test;
 
 import java.util.Iterator;
