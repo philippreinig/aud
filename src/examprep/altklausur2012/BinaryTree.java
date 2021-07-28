@@ -42,7 +42,6 @@ public class BinaryTree {
         }
 
         return null;
-
     }
 
 }
