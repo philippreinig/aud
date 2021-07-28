@@ -1,4 +1,4 @@
-package examprep.dijkstravisualization;
+package examprep.altklausur2012.dijkstravisualization;
 
 import aud.example.graph.TraversalExample;
 
