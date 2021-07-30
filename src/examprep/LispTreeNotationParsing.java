@@ -2,7 +2,6 @@ package examprep;
 
 import aud.BinaryTree;
 import aud.util.DotViewer;
-import aud.util.ParseTree;
 import exam.TreeToString;
 
 public class LispTreeNotationParsing {
