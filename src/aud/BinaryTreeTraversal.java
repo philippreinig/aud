@@ -89,8 +89,7 @@ public class BinaryTreeTraversal<T> {
 
     private void descendLeft() {
       BinaryTree<T> node=stack_.top();
-      for (node=node.getLeft();node!=null;node=node.getLeft())
-	stack_.push(node);
+      for (node=node.getLeft();node!=null;node=node.getLeft()) stack_.push(node);
     }
 
     @Override public BinaryTree<T> next() {

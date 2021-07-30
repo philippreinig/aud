@@ -3,6 +3,8 @@ package examprep.altklausur2012.binarytreemaxlevel;
 import aud.BinaryTree;
 import aud.Stack;
 import aud.util.DotViewer;
+import aud.util.ParseTree;
+import exam.TreeToString;
 
 public class BinaryTreeMaxLevelSum {
 
@@ -77,5 +79,6 @@ public class BinaryTreeMaxLevelSum {
 
         DotViewer.displayWindow(tree.toDot(), null);
         System.out.println(maxLevelSum(tree));
+
     }
 }
