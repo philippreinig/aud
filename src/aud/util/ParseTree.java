@@ -34,14 +34,22 @@ public class ParseTree {
     public String toString() {
       String result = "(";
 
-      if (keys.size()>1) {
+      if (keys.size() > 1) {
         result+="("+String.join(" ",keys)+")";
       }
       else {
         result+=keys.front();
       }
-      for (Node c : children) {
-        result += " " + (c == null ? "()" : c);
+
+      // for (Node c : children) {
+      //   result += " " + (c == null ? "()" : c);
+      // }
+
+      for (int i=0; i <= keys.size(); ++i) {
+        if (i >= children.size() || children.at(i) == null)
+          result += " ()";
+        else
+          result += " " + children.at(i);
       }
 
       return result+")";
