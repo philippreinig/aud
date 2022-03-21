@@ -3,9 +3,18 @@ package examprep.altklausur2012.doublylinkedring;
 import aud.util.DotViewer;
 
 public class IntRingDevTest {
+    public static RNode<Integer> find(final IntRing ring, final int x) {
+        RNode<Integer> curr = ring.getHead();
+        do {
+            if (curr.getData() == x) return curr;
+            curr = curr.getNext();
+        } while (curr != ring.getHead());
+        return null;
+    }
+
 
     private static void printEachNodeOfRing(final Ring<?> ring) {
-        for (final Ring.RNode<?> node : ring) {
+        for (final RNode<?> node : ring) {
             System.out.println(node);
         }
         System.out.println("-------------------------");
@@ -14,24 +23,24 @@ public class IntRingDevTest {
     public static void main(final String[] args) {
         final IntRing intRing = new IntRing();
 
-        Ring.RNode<Integer> ref = null;
 
-        for (int i = 1; i < 10; ++i) {
-            if (i == 5) {
-                ref = intRing.insertBack(i);
-            } else {
-                intRing.insertBack(i);
-            }
-//            System.out.println(intRing);
-        }
+        intRing.insertFront(3);
+        intRing.insertFront(2);
+        intRing.insertFront(1);
 
-        final DotViewer dv = DotViewer.displayWindow(intRing.toDot(), null);
+        final RNode<Integer> ref = intRing.find(3);
+//        for (int i = 1; i < 10; ++i) {
+//                intRing.insertBack(i);
+//        }
+
+        final DotViewer dv = DotViewer.displayWindow(intRing.toDot(), "Doubly linked ring");
         intRing.insertBefore(ref, -1);
+        printEachNodeOfRing(intRing);
         dv.display(intRing.toDot());
 
 
-        for (int i = 0; i < 15; ++i) {
-            System.out.println(i + ": find -> " + intRing.find(i));
+        for (int i = -1; i < 15; ++i) {
+            System.out.println(i + ": find -> " + find(intRing, i));
         }
 
 

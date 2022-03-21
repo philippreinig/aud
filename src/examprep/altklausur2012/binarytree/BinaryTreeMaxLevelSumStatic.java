@@ -1,12 +1,10 @@
-package examprep.altklausur2012.binarytreemaxlevel;
+package examprep.altklausur2012.binarytree;
 
 import aud.BinaryTree;
 import aud.Stack;
 import aud.util.DotViewer;
-import aud.util.ParseTree;
-import exam.TreeToString;
 
-public class BinaryTreeMaxLevelSum {
+public class BinaryTreeMaxLevelSumStatic {
 
     public static <T> int getLevel(final BinaryTree<T> bt) {
         BinaryTree<T> next = bt;
@@ -52,7 +50,7 @@ public class BinaryTreeMaxLevelSum {
         final Stack<BinaryTree<Integer>> stack = new Stack<>();
         final int[] levelSums = new int[getHeight(bt) + 1];
         stack.push(bt);
-        while (!stack.is_empty()) {
+        while (!stack.isEmpty()) {
             final BinaryTree<Integer> next = stack.pop();
             if (next.getLeft() != null) {
                 stack.push(next.getLeft());

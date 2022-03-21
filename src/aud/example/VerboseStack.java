@@ -39,7 +39,7 @@ public class VerboseStack<T> extends Stack<T> {
 
   @Override
   public String toString() {
-    if (!is_empty()) {
+    if (!isEmpty()) {
       T x=super.pop();
       String bottom=toString();
       super.push(x);

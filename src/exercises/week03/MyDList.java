@@ -10,35 +10,9 @@ public class MyDList<T> extends DList<T> {
         super();
     }
 
-    // O(n) = n
-    public void append(MyDList<T> li) {
-        Queue<T> queue = new Queue<>();
-        for (T t : li) queue.enqueue(t);
-        T next = queue.dequeue();
-        while (!queue.is_empty()) {
-            this.push_back(next);
-            next = queue.dequeue();
-        }
-        this.push_back(next);
-    }
-
-    // O(n) = n
-    public void insert(int n, MyDList<T> li) {
-        if (n < 0 || n >= this.size()) throw new IndexOutOfBoundsException();
-        Queue<T> queue = new Queue<>();
-        for (T t : li) queue.enqueue(t);
-        T next = queue.dequeue();
-        int i;
-        for (i = 0; !queue.is_empty(); i++) {
-            super.insert(n + i, next);
-            next = queue.dequeue();
-        }
-        super.insert(i + n, next);
-    }
-
-    public static void main(String[] args) {
-        MyDList<Integer> mydl1 = new MyDList<>();
-        MyDList<Integer> mydl2 = new MyDList<>();
+    public static void main(final String[] args) {
+        final MyDList<Integer> mydl1 = new MyDList<>();
+        final MyDList<Integer> mydl2 = new MyDList<>();
         mydl1.push_back(1);
         mydl1.push_back(2);
         mydl1.push_back(3);
@@ -53,6 +27,32 @@ public class MyDList<T> extends DList<T> {
         System.out.println(mydl1);
 //        mydl1.append(mydl1);
 //        System.out.println(mydl1);
+    }
+
+    // O(n) = n
+    public void append(final MyDList<T> li) {
+        final Queue<T> queue = new Queue<>();
+        for (final T t : li) queue.enqueue(t);
+        T next = queue.dequeue();
+        while (!queue.isEmpty()) {
+            this.push_back(next);
+            next = queue.dequeue();
+        }
+        this.push_back(next);
+    }
+
+    // O(n) = n
+    public void insert(final int n, final MyDList<T> li) {
+        if (n < 0 || n >= this.size()) throw new IndexOutOfBoundsException();
+        final Queue<T> queue = new Queue<>();
+        for (final T t : li) queue.enqueue(t);
+        T next = queue.dequeue();
+        int i;
+        for (i = 0; !queue.isEmpty(); i++) {
+            super.insert(n + i, next);
+            next = queue.dequeue();
+        }
+        super.insert(i + n, next);
     }
 }
 

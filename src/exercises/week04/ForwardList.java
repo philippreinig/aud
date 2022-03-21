@@ -74,12 +74,12 @@ public class ForwardList<T> implements Iterable<T> {
 
         @Override
         public boolean hasNext() {
-            return !stack.is_empty();
+            return !stack.isEmpty();
         }
 
         @Override
         public T next() {
-            if (stack.is_empty()) throw new NoSuchElementException();
+            if (stack.isEmpty()) throw new NoSuchElementException();
             return stack.pop();
         }
     }

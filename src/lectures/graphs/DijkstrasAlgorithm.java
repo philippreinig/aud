@@ -39,7 +39,9 @@ public class DijkstrasAlgorithm {
             assert v != null;
             for (final Edge edge : v.getOutgoingEdges()) {
                 final double new_d = d.get(v) + edge.getWeight();
-                if (pq.contains(edge.getDestination()) && new_d < d.get(edge.getDestination())) {
+                if (/**pq.contains(edge.getDestination())  && */new_d < d.get(edge.getDestination())) {
+                    if (!pq.contains(edge.getDestination()))
+                        System.err.println(edge.getDestination() + " not in pq anymore! (" + pq + ")");
                     d.put(edge.getDestination(), new_d);
                     p.put(edge.getDestination(), v);
                     pq.lower(edge.getDestination());

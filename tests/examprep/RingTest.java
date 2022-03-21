@@ -1,6 +1,7 @@
 package examprep;
 
 import examprep.altklausur2012.doublylinkedring.IntRing;
+import examprep.altklausur2012.doublylinkedring.RNode;
 import examprep.altklausur2012.doublylinkedring.Ring;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class RingTest {
             ring.insertFront(i);
         }
         for (int i = 0; i < TEST_AMOUNT; ++i) {
-            final int dataReturned = ring.getData(i);
+            final int dataReturned = ring.getNthNode(i).getData();
             final int expected = TEST_AMOUNT - i - 1;
             assert (dataReturned == expected) : "expected: " + expected + ", but got: " + dataReturned;
         }
@@ -30,7 +31,7 @@ public class RingTest {
             ring.insertBack(i);
         }
         for (int i = 0; i < TEST_AMOUNT; ++i) {
-            final int data = ring.getData(i);
+            final int data = ring.getNthNode(i).getData();
             assert (data == i) : "expected element: " + i + ", found: " + data;
         }
     }
@@ -44,7 +45,7 @@ public class RingTest {
         }
 
         for (int i = 0; i < 10; ++i) {
-            final int data = intRing.getData(i);
+            final int data = intRing.getNthNode(i).getData();
             assert (data == i) : "expected " + i + ", but got " + data;
         }
 
@@ -74,10 +75,10 @@ public class RingTest {
         for (int i = 0; i < TEST_AMOUNT; ++i) {
             intRing.insertBack(i);
         }
-        final Iterator<Ring.RNode<Integer>> iter = intRing.iterator();
+        final Iterator<RNode<Integer>> iter = intRing.iterator();
         for (int i = 0; i < TEST_AMOUNT; ++i) {
             assert (iter.hasNext()) : "expected iterator to have next element, but doesn't";
-            final int next = iter.next().data;
+            final int next = iter.next().getData();
             assert (next == i) : "expected next element to be " + i + ", but is: " + next;
         }
         assert (!iter.hasNext()) : "expected iterator not to have next element, but does";

@@ -23,7 +23,7 @@ public class TPalindrome {
             }
         }
         String temp = "";
-        while (!stack.is_empty()) {
+        while (!stack.isEmpty()) {
             temp += stack.pop();
         }
         return isPalindrome(temp);
@@ -38,7 +38,7 @@ public class TPalindrome {
             stackFromFront.push(chars[i]);
             stackFromBack.push(chars[chars.length - 1 - i]);
         }
-        while (!stackFromFront.is_empty()) {
+        while (!stackFromFront.isEmpty()) {
 //            System.out.println("sfF: " + stackFromFront.toString());
 //            System.out.println("sfB: " + stackFromBack.toString());
             if (!stackFromFront.pop().toString().equals(stackFromBack.pop().toString())) return false;

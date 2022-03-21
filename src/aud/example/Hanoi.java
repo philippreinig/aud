@@ -141,7 +141,7 @@ class Hanoi {
         }
         move_disk(from,to); // n=1
 
-        if (stack.is_empty()) {
+        if (stack.isEmpty()) {
           done=true;
         }
         else {
@@ -204,7 +204,7 @@ class Hanoi {
     }
 
     @Override public boolean hasNext() {
-      return !stack_.is_empty();
+      return !stack_.isEmpty();
     }
     /** @throws UnsupportedOperationException (not implemented) */
     @Override public void remove() {

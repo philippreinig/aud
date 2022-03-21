@@ -6,25 +6,22 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
-public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
+public class Ring<T> implements Iterable<RNode<T>>, Graphvizable {
     private static final boolean CHECK = false;
     private RNode<T> head;
     private RNode<T> tail;
 
-    public Ring() {
-    }
-
     public void remove(final RNode<T> node) {
-        if (node.next == null || node.prev == null) {
+        if (node.getNext() == null || node.getPrev() == null) {
             throw new IllegalArgumentException(node + " contains invalid references to prev or next -> cant perform remove operation");
         }
         if (Ring.CHECK) {
             this.checkIfNodeContainedInRing(node);
         }
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
-        node.prev = null;
-        node.next = null;
+        node.getPrev().setNext(node.getNext());
+        node.getNext().setPrev(node.getPrev());
+        node.setPrev(null);
+        node.setNext(null);
         System.err.println("remove:" + this + " does not contain " + node);
     }
 
@@ -48,29 +45,26 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
             assert (this.tail == null);
             this.head = newNode;
             this.tail = newNode;
-            newNode.next = newNode;
-            newNode.prev = newNode;
+            newNode.setNext(newNode);
+            newNode.setPrev(newNode);
         } else {
-            this.head.prev = newNode;
-            this.tail.next = newNode;
-            newNode.next = this.head;
-            newNode.prev = this.tail;
+            this.getHead().setPrev(newNode);
+            this.getTail().setNext(newNode);
+            newNode.setNext(this.head);
+            newNode.setPrev(this.tail);
             this.head = newNode;
         }
     }
 
-    public RNode<T> getNode(final int x) {
+    public RNode<T> getNthNode(final int n) {
         final Iterator<RNode<T>> iter = this.iterator();
         RNode<T> curr = iter.next();
-        for (int i = 1; i <= x; ++i) {
+        for (int i = 0; i < n; ++i) {
             curr = iter.next();
         }
         return curr;
     }
 
-    public T getData(final int x) {
-        return this.getNode(x).data;
-    }
 
     public RNode<T> insertBack(final T data) {
         final RNode<T> newNode = new RNode<>(data);
@@ -78,11 +72,11 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
             assert (this.tail == null);
             this.insertFront(data);
         } else {
-            newNode.next = this.head;
-            newNode.prev = this.tail;
-            this.head.prev = newNode;
-            this.tail.next = newNode;
-            this.tail = newNode;
+            newNode.setNext(this.head);
+            newNode.setPrev(this.tail);
+            this.getHead().setPrev(newNode);
+            this.getTail().setNext(newNode);
+            this.setTail(newNode);
         }
         return newNode;
     }
@@ -96,11 +90,13 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
         }
         final RNode<T> newNode = new RNode<>(data);
 
-        newNode.prev = ref;
-        newNode.next = ref.next;
+        newNode.setPrev(ref);
+        newNode.setNext(ref.getNext());
 
-        ref.next = newNode;
-        newNode.next.prev = newNode;
+        ref.setNext(newNode);
+        newNode.getNext().setPrev(newNode);
+
+        if (ref == this.tail) this.tail = newNode;
     }
 
     public void insertBefore(final RNode<T> ref, final T data) {
@@ -112,10 +108,12 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
         }
 
         final RNode<T> newNode = new RNode<>(data);
-        newNode.prev = ref.prev;
-        newNode.next = ref;
-        ref.prev.next = newNode;
-        ref.prev = newNode;
+        newNode.setPrev(ref.getPrev());
+        newNode.setNext(ref);
+        ref.getPrev().setNext(newNode);
+        ref.setPrev(newNode);
+
+        if (ref == this.head) this.head = newNode;
     }
 
     public RNode<T> find(final T data) {
@@ -123,7 +121,7 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
             throw new IllegalArgumentException();
         }
         for (final RNode<T> node : this) {
-            if (node.data.equals(data)) {
+            if (node.getData().equals(data)) {
                 return node;
             }
         }
@@ -143,11 +141,28 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
         throw new NoSuchElementException(node + " is not contained in " + this);
     }
 
+    public RNode<T> getHead() {
+        return this.head;
+    }
+
+    public void setHead(final RNode<T> head) {
+        this.head = head;
+    }
+
+    public RNode<T> getTail() {
+        return this.tail;
+    }
+
+    public void setTail(final RNode<T> tail) {
+        this.tail = tail;
+    }
+
+
     @Override
     public Iterator<RNode<T>> iterator() {
         return new Iterator<>() {
             boolean tailReached = false;
-            RNode<T> next = Ring.this.head;
+            RNode<T> nextNodeForIterator = Ring.this.head;
 
             @Override
             public boolean hasNext() {
@@ -158,7 +173,7 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
                     hasNext = !this.tailReached;
 
                 } else {
-                    hasNext = !this.tailReached || this.next == Ring.this.tail;
+                    hasNext = !this.tailReached || this.nextNodeForIterator == Ring.this.tail;
                 }
                 return hasNext;
             }
@@ -168,11 +183,11 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
                 if (!this.hasNext()) {
                     throw new NoSuchElementException();
                 }
-                this.next = this.next.next;
-                if (this.next == Ring.this.tail) {
+                this.nextNodeForIterator = this.nextNodeForIterator.getNext();
+                if (this.nextNodeForIterator == Ring.this.tail) {
                     this.tailReached = true;
                 }
-                return this.next.prev;
+                return this.nextNodeForIterator.getPrev();
             }
         };
     }
@@ -189,9 +204,9 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
         } else {
             dotStr = new StringBuilder("digraph Ring {\n");
             for (final RNode<T> node : this) {
-                final String prvStr = node.prev.data.toString();
-                final String nxtStr = node.next.data.toString();
-                final String nodeStr = node.data.toString();
+                final String prvStr = node.getPrev().getData().toString();
+                final String nxtStr = node.getNext().getData().toString();
+                final String nodeStr = node.getData().toString();
                 dotStr.append("\"").append(nodeStr).append("\"").append(ARROW_PREV)
                         .append("\"").append(prvStr).append("\"").append(LABEL_PREV)
                         .append(";\n").append("\"").append(nodeStr).append("\"").append(ARROW_NEXT)
@@ -208,39 +223,9 @@ public class Ring<T> implements Iterable<Ring.RNode<T>>, Graphvizable {
         final StringBuilder ringStr = new StringBuilder();
         ringStr.append(" | ");
         for (final RNode<T> node : this) {
-            ringStr.append(node.data.toString()).append(" | ");
+            ringStr.append(node.getData().toString()).append(" | ");
         }
         return ringStr.toString();
-    }
-
-    public static class RNode<T> {
-        public T data;
-        public RNode<T> next;
-        public RNode<T> prev;
-
-        RNode(final T data) {
-            this(data, null, null);
-        }
-
-        RNode(final T data, final RNode<T> prev, final RNode<T> next) {
-            if (data == null) {
-                throw new IllegalArgumentException();
-            }
-            this.data = data;
-            this.prev = prev;
-            this.next = next;
-        }
-
-        public String toStringShort() {
-            return "(" + this.data.toString() + ")";
-        }
-
-        @Override
-        public String toString() {
-            final String prevStr = this.prev != null ? this.prev.data.toString() : "null";
-            final String nextStr = this.next != null ? this.next.data.toString() : "null";
-            return "(" + prevStr + ")" + " <-> " + "(" + this.data.toString() + ")" + " <-> " + "(" + nextStr + ")";
-        }
     }
 
 }

@@ -12,13 +12,13 @@ public class StackTest {
   public void testStack() {
     Stack<Integer> stack=new Stack<Integer>();
 
-    assertTrue(stack.is_empty());
+    assertTrue(stack.isEmpty());
     stack.push(1);
-    assertFalse(stack.is_empty());
+    assertFalse(stack.isEmpty());
     assertEquals(stack.top().intValue(),1);
 
     stack.pop();
-    assertTrue(stack.is_empty());
+    assertTrue(stack.isEmpty());
 
     stack.push(1);
     stack.push(2);
@@ -26,7 +26,7 @@ public class StackTest {
     assertTrue(stack.pop()==3);
     assertTrue(stack.pop()==2);
     assertTrue(stack.pop()==1);
-    assertTrue(stack.is_empty());
+    assertTrue(stack.isEmpty());
   }
 
   @Test(expected=NoSuchElementException.class)

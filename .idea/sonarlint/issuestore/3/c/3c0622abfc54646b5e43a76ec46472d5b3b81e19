@@ -1,0 +1,14 @@
+
+l	java:S116	"RRename this field "viewer_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞĞ½øøÿÿÿÿ
+M
+java:S6126"2Replace this String concatenation with Text block.(”ŞÑşıÿÿÿÿ
+h
+java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(Çµí‘
+r	java:S1276"XRefactor the code in order to not assign to this loop counter from within the loop body.(íŸîÇûÿÿÿÿ
+r	java:S1278"XRefactor the code in order to not assign to this loop counter from within the loop body.(ãå£Õüÿÿÿÿ
+r	java:S127:"XRefactor the code in order to not assign to this loop counter from within the loop body.(ğ”˜åüÿÿÿÿ
+r	java:S127<"XRefactor the code in order to not assign to this loop counter from within the loop body.(çï“Îıÿÿÿÿ
+m	java:S127>"XRefactor the code in order to not assign to this loop counter from within the loop body.(ŠÉ€
+r	java:S127@"XRefactor the code in order to not assign to this loop counter from within the loop body.(û—ÿ²øÿÿÿÿ
+k
+java:S1104"UMake traversal a static final constant or non-public and provide accessors if needed.(Ï§Ó

@@ -17,7 +17,7 @@ public class RecursionToStack {
             n /= 10;
         }
         int crossSum = n;
-        while (!stack.is_empty()) crossSum += stack.pop();
+        while (!stack.isEmpty()) crossSum += stack.pop();
         return crossSum;
     }
 

@@ -41,7 +41,7 @@ public class IterativeDFS2 extends Traversal {
     showMark(s0);
     open.push(s0);
 
-    while (!open.is_empty()) {
+    while (!open.isEmpty()) {
       if (verbose>0)
         System.out.println("open="+open.toString());
 

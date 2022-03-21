@@ -33,7 +33,7 @@ public class IterativeDFS1 extends Traversal {
     open.push(s0);
     parent.push(null);
 
-    while (!open.is_empty()) {
+    while (!open.isEmpty()) {
       if (verbose>0)
         System.out.println("open="+open.toString());
 

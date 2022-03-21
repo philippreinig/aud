@@ -15,33 +15,33 @@ public class A234TreeTest {
 
     for (int[] p : new Permutations(n)) {
 
-      A234Tree<String> tree=new A234Tree<String>(false);
+      A234Tree<String> tree=new A234Tree<>(false);
 
       for (int i : p) {
         String k=tree.find(keys[i]);
-        assertEquals(k,null);
+        assertNull(k);
         tree.insert(keys[i]);
         k=tree.find(keys[i]);
-        assertTrue(k!=null);
-        assertTrue(k.compareTo(keys[i])==0);
+        assertNotNull(k);
+        assertEquals(0, k.compareTo(keys[i]));
         tree.checkConsistency();
       }
 
-      tree=new A234Tree<String>(true);
+      tree=new A234Tree<>(true);
 
       for (int i : p) {
         String k=tree.find(keys[i]);
-        assertEquals(k,null);
+        assertNull(k);
         tree.insert(keys[i]);
         k=tree.find(keys[i]);
-        assertTrue(k!=null);
-        assertTrue(k.compareTo(keys[i])==0);
+        assertNotNull(k);
+        assertEquals(0, k.compareTo(keys[i]));
         tree.checkConsistency();
       }
     }
   }
 
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     org.junit.runner.JUnitCore.main("aud.test.A234TreeTest");
   }
 }

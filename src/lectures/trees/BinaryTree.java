@@ -8,7 +8,7 @@ public class BinaryTree<T> {
     private BinaryTree<T> rightChild;
     private T data;
 
-    public BinaryTree(BinaryTree<T> parent, BinaryTree<T> leftChild, BinaryTree<T> rightChild, T data) {
+    public BinaryTree(final BinaryTree<T> parent, final BinaryTree<T> leftChild, final BinaryTree<T> rightChild, final T data) {
         this.parent = parent;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
@@ -21,7 +21,7 @@ public class BinaryTree<T> {
         return this.data;
     }
 
-    public void setData(T data) {
+    public void setData(final T data) {
         this.data = data;
     }
 
@@ -29,8 +29,8 @@ public class BinaryTree<T> {
         return this.rightChild;
     }
 
-    public void setRightChild(BinaryTree<T> rightChild) {
-        BinaryTree<T> oldRightChild = this.getRightChild();
+    public void setRightChild(final BinaryTree<T> rightChild) {
+        final BinaryTree<T> oldRightChild = this.getRightChild();
         this.rightChild = rightChild;
         if (this.rightChild != null) this.rightChild.setParent(this);
         if (oldRightChild != null) oldRightChild.setParent(null);
@@ -40,8 +40,8 @@ public class BinaryTree<T> {
         return this.leftChild;
     }
 
-    public void setLeftChild(BinaryTree<T> leftChild) {
-        BinaryTree<T> oldLeftChild = this.getLeftChild();
+    public void setLeftChild(final BinaryTree<T> leftChild) {
+        final BinaryTree<T> oldLeftChild = this.getLeftChild();
         this.leftChild = leftChild;
         if (this.leftChild != null) this.leftChild.setParent(this);
         if (oldLeftChild != null) oldLeftChild.setParent(null);
@@ -51,12 +51,12 @@ public class BinaryTree<T> {
         return this.parent;
     }
 
-    public void setParent(BinaryTree<T> parent) {
+    public void setParent(final BinaryTree<T> parent) {
         this.parent = parent;
     }
 
     public boolean isRoot() {
-        return parent == null;
+        return this.parent == null;
     }
 
     public boolean isLeaf() {
@@ -79,30 +79,30 @@ public class BinaryTree<T> {
         return i;
     }
 
-    public void traversePreorder(BinaryTree<T> node) {
+    public void traversePreorder(final BinaryTree<T> node) {
         if (node != null) {
             System.out.print(node.getData().toString() + " ");
-            traversePreorder(node.getLeftChild());
-            traversePreorder(node.getRightChild());
+            this.traversePreorder(node.getLeftChild());
+            this.traversePreorder(node.getRightChild());
         }
     }
 
     public void traversePreorderIterative(BinaryTree<T> node) {
-        Stack<BinaryTree<T>> stack = new Stack<>();
+        final Stack<BinaryTree<T>> stack = new Stack<>();
         while (node != null) {
             while (node != null) {
                 System.out.print(node.getData() + " ");
                 if (node.getRightChild() != null) stack.push(node.getRightChild());
                 node = node.getLeftChild();
             }
-            node = stack.is_empty() ? null : stack.pop();
+            node = stack.isEmpty() ? null : stack.pop();
         }
     }
 
     public void traversePreorderIterativeEasy(BinaryTree<T> node) {
-        Stack<BinaryTree<T>> stack = new Stack<>();
+        final Stack<BinaryTree<T>> stack = new Stack<>();
         stack.push(node);
-        while (!stack.is_empty()) {
+        while (!stack.isEmpty()) {
             node = stack.pop();
             if (node.getRightChild() != null) stack.push(node.getRightChild());
             if (node.getLeftChild() != null) stack.push(node.getLeftChild());
@@ -110,19 +110,19 @@ public class BinaryTree<T> {
         }
     }
 
-    public void traverseInorder(BinaryTree<T> node) {
+    public void traverseInorder(final BinaryTree<T> node) {
         if (node != null) {
-            traversePreorder(node.getLeftChild());
+            this.traversePreorder(node.getLeftChild());
             System.out.print(node);
-            traversePreorder(node.getRightChild());
+            this.traversePreorder(node.getRightChild());
         }
     }
 
-    public void traversePostOrder(BinaryTree<T> node) {
+    public void traversePostOrder(final BinaryTree<T> node) {
         if (node != null) {
-            traversePreorder(node.getLeftChild());
+            this.traversePreorder(node.getLeftChild());
             System.out.println(node);
-            traversePreorder(node.getRightChild());
+            this.traversePreorder(node.getRightChild());
         }
     }
 //    public int height() {
@@ -139,9 +139,9 @@ public class BinaryTree<T> {
 
     @Override
     public String toString() {
-        String parent = this.getParent() == null ? "null" : this.getParent().getData().toString();
-        String leftChild = this.getLeftChild() == null ? "null" : this.getLeftChild().getData().toString();
-        String rightChild = this.getRightChild() == null ? "null" : this.getRightChild().getData().toString();
+        final String parent = this.getParent() == null ? "null" : this.getParent().getData().toString();
+        final String leftChild = this.getLeftChild() == null ? "null" : this.getLeftChild().getData().toString();
+        final String rightChild = this.getRightChild() == null ? "null" : this.getRightChild().getData().toString();
         return "data: " + this.getData() + ", parent: " + parent + ", leftChild: " + leftChild + ", rightChild " + rightChild;
     }
 }
